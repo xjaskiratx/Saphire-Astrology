@@ -1,0 +1,46 @@
+.faq-list { display: grid; gap: 12px; }
+.faq-item { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.faq-head { display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; background: var(--panel); }
+.faq-body { padding: 14px 16px; background: #141322; }
+.submit-box { margin-top: 24px; }
+
+@media only screen and (max-width: 600px) {
+  /* 1. Ensure the page is at least tall enough to push the footer */
+  .section {
+    min-height: 80vh; /* Using 80vh is safer; it pushes the footer without squishing content */ 
+    /* border: 2px solid red; */
+  }
+
+  /* 2. Prevent the FAQ items from shrinking */
+  .faq-list {
+    display: grid;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .faq-item {
+    flex-shrink: 0; /* Ensures the item never gets "squished" */
+    width: 100%;
+  }
+
+  /* 3. Text Alignment (Fixes the centering from globals.css) */
+  .faq-body .p {
+    text-align: justify !important;
+    text-align-last: left;
+    line-height: 1.6;
+  }
+
+  .faq-head .h3 {
+    text-align: left; /* Headers should align left if they are questions */
+    padding-right: 10px;
+    font-size: 17px;
+  }
+
+  /* 4. Fix the form inputs so they aren't squished */
+  .submit-box .input, 
+  .submit-box .textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px; /* Prevents iOS auto-zoom on focus */
+  }
+}

@@ -1,0 +1,511 @@
+.services-page {
+  animation: servicesBreathing 20s ease-in-out infinite alternate;
+  background-color: #3b1c5a; /* starting color */
+  padding-top: 28px;
+  /* border-radius: 24px; */
+}
+
+.section-services {
+  /* border: 2px dotted red; */
+  margin: 54px 0; 
+}
+
+.container-tarot {
+  position: relative;
+  background-image: url('/images/tarot.png');
+  background-size: cover;
+  background-position: center;
+  /* border: 2px solid blue; */
+  margin: 0 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 48px;
+  overflow: hidden; /* keep overlay inside rounded corners */
+}
+
+.container-astro {
+  position: relative;
+  background-image: url('/images/astro.png');
+  background-size: cover;
+  background-position: center;
+  margin: 0 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 48px;
+  overflow: hidden;
+}
+
+.container-num {
+  position: relative;
+  background-image: url('/images/numerology.png');
+  background-size: cover;
+  background-position: center;
+  margin: 0 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 48px;
+  overflow: hidden;
+}
+
+.container-courses {
+  position: relative;
+  background-image: url('/images/courses-bg.png');
+  background-size: cover;
+  background-position: center;
+  margin: 0 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 48px;
+  overflow: hidden;
+}
+
+.container-courses::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  animation: dimBrighten 8s infinite alternate;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.container-astro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  animation: dimBrighten 8s infinite alternate;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.container-astro > * {
+  position: relative;
+  z-index: 1;
+}
+
+.container-tarot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  animation: dimBrighten 8s infinite alternate;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.container-tarot > * {
+  position: relative;
+  z-index: 1; /* ensure text/content is above overlay */
+}
+
+.container-num::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  animation: dimBrighten 8s infinite alternate;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+@keyframes dimBrighten {
+  0%   { background: rgba(0,0,0,0.68); }
+  50%  { background: rgba(0,0,0,0.7); }
+  100% { background: rgba(0,0,0,0.72); }
+}
+
+.container-tarot > * {
+  margin: 0;
+}
+
+.container-num > * {
+  position: relative;
+  z-index: 1; /* ensure text/content is above overlay */
+}
+.tarot-head, .tarot-avail {
+  margin: 12px 0;
+}
+
+/* Blurred background for .card-tarot with sharp content */
+.card-tarot {
+  position: relative;
+  overflow: hidden;
+  /* background: rgba (0, 0, 0, 0.6); */
+  background: rgba(186, 186, 186, 0.2); 
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.card-astro {
+  position: relative;
+  overflow: hidden;
+  /* background: rgba (0, 0, 0, 0.6); */
+  background: rgba(186, 186, 186, 0.2); 
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.card-num {
+  position: relative;
+  overflow: hidden;
+  /* background: rgba (0, 0, 0, 0.6); */
+  background: rgba(186, 186, 186, 0.2); 
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+/* .num-head {
+  margin: 12px 0;
+} */
+
+.num-banner {
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.container-astro .card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(186, 186, 186, 0.2); /* same as .card-tarot */
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.card-tarot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.card-tarot, .card-astro > * {
+  position: relative;
+  z-index: 1; /* ensure text/content is above the blurred background */
+}
+
+.card-astro {
+  text-align: center;
+}
+
+.card-tarot .h3 span {
+  display: inline-block;
+  transform-origin: center;
+  animation-name: bubble;
+  animation-duration: 1.8s; /* total duration long enough for full wave */
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: var(--delay, 0s); /* default 0s, can be overridden inline */
+}
+
+@keyframes bubble {
+  0%, 100% { transform: scale(1); }
+  30%      { transform: scale(1.15); }
+  70%      { transform: scale(1); }
+}
+
+.currency-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  /* background: linear-gradient(135deg, rgba(122,92,255,0.15), rgba(255,134,200,0.1)); */
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(6px);
+  margin: 12px;
+  margin-top: 0;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  position: fixed;
+  z-index: 10;
+}
+
+
+
+.currency-select select {
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  /* appearance: none; */
+}
+
+.currency-select option {
+  background: #0a0a2a;
+  color: white;
+}
+
+.banner-options {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.banner-pill {
+  flex: 1 1 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(122,92,255,0.15), rgba(255,134,200,0.1));
+  border: 1px solid var(--border);
+}
+
+.btn-svc-tarot {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--accent);
+  animation: btnBreathing 6s ease-in-out infinite alternate;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-svc-astro {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--accent);
+  animation: btnBreathing 6s ease-in-out infinite alternate;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 12px;
+}
+
+.btn-svc-num {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--accent);
+  animation: btnBreathing 6s ease-in-out infinite alternate;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 12px;
+}
+
+.grid-svc-tarot {
+  display: grid;
+  width: 100%;
+  justify-content: space-around;
+  padding: 0 10%;
+  /* border: 2px solid black; */
+  gap: 96px;
+}
+
+.grid-svc-astro {
+  display: grid;
+  width: 100%;
+  justify-content: space-around;
+  padding: 0 8%;
+  margin-bottom: 4%;
+  /* border: 2px solid black; */
+  gap: 20px;
+}
+
+.grid-svc-num {
+  display: grid;
+  width: 100%;
+  justify-content: space-around;
+  padding: 0 8%;
+  margin-bottom: 4%;
+  /* border: 2px solid black; */
+  gap: 20px;
+}
+
+.grid-svc-course {
+  display: grid;
+  width: 100%;
+  justify-content: space-around;
+  padding: 0 8%;
+  margin-bottom: 4%;
+  /* border: 2px solid black; */
+  gap: 20px;
+}
+
+.grid-3-svc-tarot { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4-svc-astro { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.bar-svc {
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    rgba(59, 28, 90, 0) 0%,      /* transparent left edge */
+    rgba(59, 28, 90, 1) 20%,     /* solid purple after fade-in */
+    #0a0a2a 50%,                 /* dark center */
+    rgba(59, 28, 90, 1) 80%,     /* solid purple before fade-out */
+    rgba(59, 28, 90, 0) 100%     /* transparent right edge */
+  );
+  /* margin: 28px 0;    */
+}
+
+.last-svc {
+  margin-bottom: 0;
+  padding-bottom: 60px; 
+}
+
+@media (max-width: 900px){
+  .course-grid { grid-template-columns: 1fr; }
+}
+
+@keyframes btnBreathing {
+  0%   { background: var(--accent); }
+  50%  { background: var(--accent-2); }
+  100% { background: var(--accent); }
+}
+
+@media only screen and (max-width: 600px) {
+  /* --- Global Container Adjustments --- */
+  .container-tarot, 
+  .container-astro {
+    margin: 0 5%; /* Give more space on mobile */
+    border-radius: 24px; /* Slightly tighter corners for small screens */
+    padding: 24px 0;
+    /* border: 2px solid green; */
+  }
+
+  /* --- Grid to Stack Transformation --- */
+  .grid-3-svc-tarot, 
+  .grid-4-svc-astro {
+    grid-template-columns: 1fr !important; /* Forces single column stack */
+    padding: 0 15px !important;
+    gap: 16px !important;
+    justify-items: center;
+  }
+
+  /* --- Individual Card Layouts --- */
+  
+  /* 1. Tarot Services: Timing top, Price bottom */
+  .card-tarot {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    width: 90%;
+    /* border: 2px solid red; */
+  }
+
+  .card-tarot > .h3 {
+    font-size: 24px;
+  }
+
+  /* 2 & 3. Astro, Numerology, and Courses */
+  .card-astro, 
+  .card-num {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    padding: 24px 16px;
+    margin: 4px 0;
+    /* border: 2px solid red; */
+    width: 80%;
+  }
+
+   .card-astro > .h3, .p {
+    font-size: 22px;
+  }
+
+  .card-astro > .p {
+    font-size: 22px;
+  }
+
+  .container-num {
+    margin: 0 5%; /* Give more space on mobile */
+    border-radius: 24px; /* Slightly tighter corners for small screens */
+    padding: 24px 0;
+    /* border: 2px solid green; */
+  }
+
+  .card-num > .h3 {
+    font-size: 22px;
+    /* border: 2px solid red; */
+  }
+
+  .card-num > .p {
+    font-size: 22px;
+  }
+
+  .last-svc > .container-astro > .grid-svc-astro > .card-astro {
+    padding: 12px 12px;
+    gap: 0;
+  }
+
+  /* Typography Adjustments */
+  .h1.tarot-head, 
+  .h1.astro-head {
+    font-size: 28px;
+    padding: 0 10px;
+  }
+
+  .tarot-avail {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Buttons */
+  .btn-svc-tarot, 
+  .btn-svc-astro, 
+  .btn-svc-num {
+    width: 80%; /* Larger touch area */
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  /* Fix for the fixed currency select on mobile */
+  .currency-select.global-currency {
+    position: static; /* Move it back into flow or move to top */
+    margin: 10px auto;
+    display: flex;
+    width: fit-content;
+  }
+}

@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Vite build output
+dist/
+.vite/
+
+# Environment variables
+.env
+.env.local
+
+# Editor
+.vscode/
+
+# Logs
+*.log

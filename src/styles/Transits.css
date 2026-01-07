@@ -1,0 +1,113 @@
+
+.space {
+  position: relative;
+  height: calc(100vh - 160px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(circle at center, 
+                              #000000 22%, 
+                              #0b0f22 44%, 
+                              #161b44 55%, 
+                              #212467 66%, 
+                              /* #512878 55%,  */
+                              #2c308a 77%, 
+                              #373cad 88%, 
+                              #4247d0 95%, 
+                              #4d52f3 99%, 
+                              #575fff 100%);
+}
+
+.planet {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.sun {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffdf6e, #ff9a1f);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 40px #ffbd3a;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+
+/* Planets */
+.planet.p1 { width: 6px; height: 6px; background: #b5c7ff; animation: orbit1 6s linear infinite; }
+.planet.p2 { width: 10px; height: 10px; background: #ffd5a3; animation: orbit2 10s linear infinite; }
+.planet.p3 { width: 12px; height: 12px; background: #9ef1ff; animation: orbit3 14s linear infinite; }
+.planet.p4 { width: 14px; height: 14px; background: #ff7f50; animation: orbit4 18s linear infinite; }
+.planet.p5 { width: 18px; height: 18px; background: #f4d03f; animation: orbit5 22s linear infinite; }
+.planet.p6 { width: 16px; height: 16px; background: #d2b4de; animation: orbit6 26s linear infinite; }
+.planet.p7 { width: 14px; height: 14px; background: #85c1e9; animation: orbit7 30s linear infinite; }
+.planet.p8 { width: 12px; height: 12px; background: #a3e4d7; animation: orbit8 34s linear infinite; }
+
+/* Animations
+   Fix: include translate(-50%, -50%) so each planet is centered on the container
+   BEFORE rotating and translating along its radius, aligning paths to dashed orbits. */
+@keyframes orbit1 {
+  from { transform: translate(-50%, -50%) rotate(0deg)   translateX(100px) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+@keyframes orbit2 {
+  from { transform: translate(-50%, -50%) rotate(0deg)   translateX(140px) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg) translateX(140px) rotate(-360deg); }
+}
+@keyframes orbit3 {
+  from { transform: translate(-50%, -50%) rotate(0deg)   translateX(180px) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg) translateX(180px) rotate(-360deg); }
+}
+@keyframes orbit4 {
+  from { transform: translate(-50%, -50%) rotate(0deg)   translateX(220px) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg) translateX(220px) rotate(-360deg); }
+}
+@keyframes orbit5 {
+  from { transform: translate(-50%, -50%) rotate(0deg)   translateX(260px) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg) translateX(260px) rotate(-360deg); }
+}
+@keyframes orbit6 {
+  from { transform: translate(-50%, -50%) rotate(0deg)   translateX(300px) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg) translateX(300px) rotate(-360deg); }
+}
+@keyframes orbit7 {
+  from { transform: translate(-50%, -50%) rotate(0deg)   translateX(340px) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg) translateX(340px) rotate(-360deg); }
+}
+@keyframes orbit8 {
+  from { transform: translate(-50%, -50%) rotate(0deg)   translateX(380px) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg) translateX(380px) rotate(-360deg); }
+}
+
+.coming {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(28px, 5vw, 56px);
+  font-weight: 900;
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 18px rgba(122,92,255,0.65);
+  animation: comingBreath 3s ease-in-out infinite alternate;
+}
+
+@keyframes comingBreath {
+  0%   { color: rgba(255, 255, 255, 0.6); text-shadow: 0 2px 12px rgba(122,92,255,0.5); }
+  50%  { color: rgba(255, 255, 255, 1);   text-shadow: 0 2px 18px rgba(122,92,255,0.65); }
+  100% { color: rgba(255, 255, 255, 0.6); text-shadow: 0 2px 12px rgba(122,92,255,0.5); }
+}

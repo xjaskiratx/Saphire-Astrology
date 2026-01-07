@@ -1,0 +1,136 @@
+.blog-page {
+  animation: servicesBreathing 20s ease-in-out infinite alternate;
+  background-color: #3b1c5a;
+  padding: 54px 0;
+}
+
+.blog-page .card,
+.blog-page .accordion {
+  background-color: rgba(7, 6, 18, 0.85);
+  box-shadow: 0 20px 45px rgba(8, 5, 20, 0.55);
+}
+
+.blog-page .card::before {
+  background: linear-gradient(120deg, rgba(0,0,0,0.05), rgba(0,0,0,0.55));
+}
+
+.blog-page .card .h3,
+.blog-page .card .p {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.card-grid { 
+  display: grid; 
+  gap: 16px; 
+  grid-template-columns: repeat(3, minmax(0, 1fr)); 
+}
+
+.anchor-section { 
+  scroll-margin-top: 80px; 
+}
+
+.anchor-section h2 {
+  color: #fff;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+/* --- Accordion --- */
+.accordion { 
+  border: 1px solid var(--border); 
+  border-radius: 12px; 
+  overflow: hidden; 
+}
+
+.accordion-item + .accordion-item { 
+  border-top: 1px solid var(--border); 
+}
+
+.ac-head { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 14px 16px; 
+  background: rgba(15, 10, 35, 0.92); 
+  color: #f3f3ff; 
+  cursor: pointer;
+}
+
+.ac-body {
+  padding: 0 16px;
+  background: rgba(10, 8, 28, 0.9);
+  color: #dcdcff;
+  line-height: 1.8;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, padding 0.3s ease, opacity 0.3s ease;
+}
+
+.accordion-item.open .ac-body {
+  padding: 14px 16px;
+  opacity: 1;
+  max-height: 800px; /* Increased to accommodate justified text expansion */
+}
+
+.top-button { 
+  position: fixed; 
+  right: 24px; 
+  bottom: 24px; 
+  padding: 10px 12px; 
+  border-radius: 10px; 
+  background: var(--panel); 
+  border: 1px solid var(--border); 
+}
+
+/* --- Mobile Specific (< 600px) --- */
+@media only screen and (max-width: 600px) {
+  .blog-page {
+    padding: 28px 0;
+  }
+
+  .card-grid { 
+    grid-template-columns: 1fr; 
+    padding: 0 12px;
+  }
+
+  .blog-page .card {
+    text-align: center;
+    padding: 24px 16px;
+  }
+
+  /* --- FIX: Force Justification --- */
+  .ac-body {
+    text-align-last: center; /* Ensures the last line doesn't stretch across the screen */
+    hyphens: auto;
+    font-size: 15px;
+    line-height: 1.6;
+    display: block; /* Ensure it's behaving as a block for alignment */
+  }
+
+  .ac-body > .p {
+    text-align: justify;
+  }
+
+  .anchor-section {
+    scroll-margin-top: 100px;
+    margin-top: 40px;
+    padding: 0 12px;
+  }
+
+  .anchor-section h2 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+
+/* Intermediate Tablet adjustments */
+@media (min-width: 601px) and (max-width: 900px) {
+  .card-grid { 
+    grid-template-columns: 1fr; 
+  }
+}
+
+@keyframes servicesBreathing {
+  0%   { background-color: #3b1c5a; }
+  100% { background-color: #1a0a2e; }
+}

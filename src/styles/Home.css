@@ -1,0 +1,377 @@
+.hero {
+  position: relative;
+  /* height: 70vh; */
+  min-height: 420px;
+  /* background-position: center; */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  /* border-bottom: 1px solid var(--border); */
+  z-index: 0; /* above welcome section */
+  display: flex;
+
+  /* fade out at bottom */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+
+.hero-bg-img {
+  position: absolute;
+  inset: 0;              /* cover entire hero */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(12,11,18,0.7) 0%,
+    rgba(12,11,18,0.65) 50%,
+    rgba(12,11,18,0.85) 80%,
+    #0a0a2a 100%
+  );
+  z-index: 2; /* above background, below text */
+}
+
+.hero-overlay-img {
+  position: absolute;
+  top: -130px;
+  bottom: 0;
+  left: 51%;
+  transform: translateX(-50%); /* center horizontally */
+  height: 165%;               /* match hero height */
+  width: auto;                /* keep aspect ratio */
+  z-index: 1;
+  animation: spinclock 120s linear infinite;
+}
+
+@keyframes spinclock {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(360deg); }
+}
+
+.hero-name {
+  position: absolute;
+  right: 4%;
+  bottom: 15%;
+  font-size: clamp(30px, 6vw, 64px);
+  font-weight: 900;
+  text-align: right;
+  z-index: 4; /* above overlay */
+}
+.hero-child {
+  position: absolute;
+  right: 4%;
+  bottom: 7%;
+  font-size: clamp(20px, 4vw, 32px);
+  font-weight: 500;
+  text-align: right;
+  font-style: italic;
+  z-index: 4; /* above overlay */
+}
+.quote-top {
+  text-align: center;
+  padding: 16px;
+  padding-left: 0;
+  font-style: italic;
+  color: var(--muted);
+}
+.quote-bottom {
+  text-align: center;
+  padding-bottom: 24px;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.sanskrit-quote {
+  text-align: center;
+}
+
+.quote-top, .quote-bottom {
+  font-size: clamp(16px, 3vw, 20px);
+  font-weight: 500;
+}
+.cards-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.bar {
+  height: 6px;
+  background: linear-gradient(90deg, #3b1c5a, #0a0a2a, #3b1c5a);
+  z-index: 10; 
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+.godandquote {
+  padding-top: 28px;
+  background: linear-gradient(to bottom, #3b1c5a, #0a0a2a);
+  /* border: 2px solid red; */
+}
+
+.section-numbers {
+  /* border: 2px solid red; */
+  background: #0a0a2a;
+  background: linear-gradient(to bottom, #0a0a2a, #3b1c5a);
+  padding: 28px 0;
+}
+
+@media (max-width: 1000px){
+  .cards-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px){
+  .hero { height: 56vh; }
+  .cards-row { grid-template-columns: 1fr; }
+  .hero-name { right: 6%; bottom: 10%; }
+}
+.split-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.welcomeandcards { 
+  position: relative;
+  background: linear-gradient(to bottom, #0a0a2a, #3b1c5a);
+  z-index: 5;
+}
+/* @media (max-width: 900px){ .split-section { grid-template-columns: 1fr; } }
+.testimonials-section{
+  overflow: hidden;
+  position: relative;
+  background: #3b1c5a;
+} */
+
+.track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.container-testimonials {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px 32px 16px;
+}
+
+.testimonial-card {
+  min-width: 300px;
+}
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* base */
+.fade-seq {
+  opacity: 0;
+  /* transform: scale(0.95); */
+  display: inline-block;
+  animation: fadeGrow 1s ease-out forwards;
+}
+
+/* all words animate together */
+.fade-seq.word { animation-delay: 1.6s; }
+
+/* all dots animate together after */
+.fade-seq.dot { animation-delay: 2.8s; }
+
+.God {
+  width: 50%;
+  border-radius: 16px;
+  box-shadow: 0 0 20px 10px rgba(241, 195, 45, 0.5);
+  animation: glow 1.5s ease-in-out infinite alternate; /* only the glow animates */
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 15px 8px rgba(241, 195, 45, 0.4); }
+  /* 50% { box-shadow: 0 0 25px 12px rgba(241, 195, 45, 0.5); } */
+  100% { box-shadow: 0 0 15px 8px rgba(241, 195, 45, 0.9); }
+}
+
+@keyframes fadeGrow {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.section-numbers {
+  text-align: center;
+}
+/* Bubble effect for first h3 in section-numbers */
+.section-numbers h3:first-child {
+  display: inline-block;
+}
+
+.section-numbers h3:first-child span {
+  display: inline-block;
+  animation-name: bubble;
+  animation-duration: 1.3s;  /* long enough for all letters to finish their cycle */
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bubble {
+  0%, 100% { transform: scale(1); }
+  30%      { transform: scale(1.3); }
+  70%      { transform: scale(1); }
+}
+
+.countup {
+  display: inline-block;
+}
+
+.section-cta {
+  /* border: 2px solid red; */
+  background: #3b1c5a;
+  padding-bottom: 28px;
+}
+
+.container-cta {
+  /* border: 2px solid blue; */
+  background: #0a0a2a;
+  border-radius: 36px;
+  width: 35%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.p-cta {
+  color: white;
+  margin: 12px 0;
+  color: var(--muted);
+}
+
+@media only screen and (max-width: 600px) {
+  .container-cta {
+    width: 80%;
+  }
+
+  .p-cta {
+    font-size: 18px;
+    margin: 28px 12px;
+  }
+
+  .p-cta br {
+    display: none;
+  }
+
+  .btn {
+    margin-bottom: 12px;
+  }
+
+  .numbers > .h3 {
+    font-size: 22px;
+  }
+
+  .split-section.mobile-priority {
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  /* Force the order */
+  .quote-lead {
+    order: 1; /* Appears first */
+    margin-bottom: 16px;
+  }
+
+  .image-container {
+    order: 2; /* Appears second */
+    width: 100%;
+  }
+
+  .quote-details {
+    order: 3; /* Appears third */
+  }
+
+  /* Ensure consistent spacing and centering */
+  .quote-lead .h3, 
+  .quote-details .h4,
+  .quote-top, 
+  .quote-bottom {
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  .quote-details {
+    margin-top: 14px;
+  }
+
+  .keep-together {
+    display: inline-block; /* Each phrase stays on one line if possible */
+    white-space: normal;   /* Allows wrap only between the spans */
+  }
+
+  .quote-top, .keep-together {
+    font-size: 22px;
+  }
+  
+  .quote-bottom {
+    padding: 0 10px;       /* Adds a buffer so text doesn't hit screen edges */
+  }
+
+  .God {
+    width: 80%; /* Larger on mobile for focus */
+    margin: 10px 0;
+  }
+
+  .welcomeandcards .section,
+  .godandquote,
+  .section-numbers,
+  .section-cta {
+    min-height: auto !important; /* Forces it to only be as tall as its content */
+    height: auto !important;
+    padding: 40px 20px; /* Gives consistent breathing room instead of forced height */
+  }
+
+  /* Specific adjustment for the "Welcome" intro part */
+  .welcomeandcards .section {
+    padding-bottom: 0; /* Tighten gap before cards row */
+  }
+
+  /* Optional: Adjust hero bg scaling for mobile */
+  .hero-bg-img {
+    object-position: 70% center; /* Adjusts the focal point of your background image */
+  }
+}
+
+/* Maintain desktop layout for screens > 600px */
+@media only screen and (min-width: 601px) {
+  .split-section.mobile-priority {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 24px;
+  }
+}

@@ -1,0 +1,234 @@
+/* --- Global & Page Setup --- */
+.about-page {
+  background: radial-gradient(circle at top, rgba(130,70,161,0.35), rgba(10,10,42,0.95));
+  min-height: 100vh;
+  color: white;
+}
+
+/* --- Hero Section --- */
+.about-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.hero-family-photo {
+  width: 100%;
+  height: 160%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.78);
+  object-position: center 35%;
+  transform: scale(1.05);
+}
+
+.family-banner {
+  text-align: center;
+  padding: 18px 12px;
+  background: #0a0a2a;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* --- Intro Section --- */
+.about-intro {
+  background: linear-gradient(180deg, #0a0a2a 0%, #0a0a2a 60%, #241745 100%);
+  padding: 60px 0;
+}
+
+.narrow {
+  width: 90vw;
+  max-width: 1100px; 
+  margin: 0 auto;
+}
+
+.narrow .p {
+  text-align: justify;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* --- Members Container --- */
+.about-members {
+  padding: 32px 0 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px; /* Space between the cards */
+  background: #241745;
+}
+
+.about-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* --- Content Wrapper (Extreme Sides) --- */
+.about-content-wrapper {
+  width: 90vw;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items: center;
+  gap: 60px; 
+}
+
+/* Alternating Row Logic */
+.about-row.reverse .about-content-wrapper {
+  flex-direction: row-reverse;
+}
+
+/* --- Uniform Image Styling --- */
+.about-img {
+  flex: 0 0 420px; /* Fixes the width of the image container */
+  display: flex;
+  justify-content: center;
+}
+
+.about-img img {
+  width: 100%;
+  max-width: 420px;
+  /* Aspect ratio ensures all images are the same height/width ratio */
+  aspect-ratio: 420 / 455; 
+  object-fit: cover; /* Prevents stretching by cropping edges if necessary */
+  object-position: center;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 20px 40px rgba(0,0,0,0.35), 0 0 12px rgba(255,255,255,0.08); }
+  50% { box-shadow: 0 20px 40px rgba(0,0,0,0.35), 0 0 30px rgba(255,255,255,0.2); }
+  100% { box-shadow: 0 20px 40px rgba(0,0,0,0.35), 0 0 12px rgba(255,255,255,0.08); }
+}
+
+/* --- Bio Styling (Center titles, Justified body) --- */
+.about-bio {
+  flex: 1; /* Bio fills the remaining space up to max-width */
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  text-align: center; /* Centers H3 and Role */
+  background: transparent;
+  padding: 16px 0;
+}
+
+.about-bio .p {
+  text-align: justify; /* Requirement: Justified summary */
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-bio .role {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #e4c724;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin: 0;
+}
+
+.about-bio .h3 {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+/* --- Divider Styling --- */
+.about-divider {
+  height: 6px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, #241745, rgba(228, 199, 36, 0.2), #241745);
+  border-radius: 3px;
+}
+
+/* --- Responsive Layout (< 600px) --- */
+@media only screen and (max-width: 600px) {
+  .about-hero {
+    height: 35vh; /* Prevents hero from taking up too much vertical space */
+  }
+
+  .hero-family-photo {
+    object-position: center 20%; /* Re-centers the family faces for narrow screens */
+  }
+
+  /* Reset layout to stack vertically and ignore the 'reverse' class */
+  .about-content-wrapper, 
+  .about-row.reverse .about-content-wrapper {
+    flex-direction: column !important;
+    gap: 20px;
+    width: 95vw;
+  }
+
+  .about-page .section {
+    min-height: 45vh !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Keeps text vertically centered in that 45vh */
+  }
+
+  /* Ensure the intro container itself doesn't have extra forced height */
+  .about-intro {
+    min-height: auto !important;
+    padding: 40px 0;
+  }
+
+  .about-img {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .about-img img {
+    max-width: 300px; /* Keeps portraits from becoming giant on mobile */
+    aspect-ratio: 1 / 1.1;
+  }
+
+  .about-bio {
+    max-width: 100%;
+    padding: 0 15px;
+    gap: 10px;
+  }
+
+  .about-bio .h3 {
+    font-size: 1.8rem;
+  }
+
+  .about-bio .role {
+    font-size: 17px;
+  }
+
+  /* Force justification for bios on mobile to override globals.css */
+  .about-bio .p {
+    text-align: justify !important;
+    text-align-last: center; /* Keeps the last line centered for visual balance */
+    font-size: 19px;
+    hyphens: auto;
+    line-height: 1.5;
+  }
+
+  /* Ensure the intro story also uses justified text */
+  .narrow .p {
+    text-align: justify !important;
+    text-align-last: center;
+    font-size: 1.05rem;
+    padding: 0 10px;
+  }
+
+  .about-divider {
+    max-width: 80%; /* Shorter dividers for mobile */
+  }
+}

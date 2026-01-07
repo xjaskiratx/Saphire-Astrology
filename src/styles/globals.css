@@ -1,0 +1,137 @@
+:root {
+  --bg: #0c0b12;
+  --panel: #161522;
+  --text: #f2f2f7;
+  --muted: #b8b8c7;
+  --accent: #7a5cff;
+  --accent-2: #ff86c8;
+  --card: #1d1b2a;
+  --border: #2a2940;
+}
+
+* { box-sizing: border-box; 
+font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0a0a2a;
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; line-height: 1.1; }
+.h2 { font-size: clamp(22px, 3.2vw, 32px); font-weight: 700; line-height: 1.15; text-align: center; }
+.h3 { font-size: clamp(18px, 2.5vw, 24px); font-weight: 700; text-align: center;}
+.h4 { font-size: clamp(18px, 5vw, 48px); font-weight: 700;  font-style: italic; margin-bottom: 0px}
+.p  { font-size: 16px; color: var(--muted); line-height: 1.7; text-align: center; }
+
+.card {
+  position: relative; /* allow overlay */
+  /* background: var(--card); */
+  /* border: 1px solid var(--border); */
+  border-radius: 16px;
+  padding: 20px;
+  /* box-shadow: 0 10px 30px rgba(0,0,0,0.2); */
+  overflow: hidden; /* ensure overlay stays inside */
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5); /* base dim overlay */
+  border-radius: 16px;
+  z-index: 0;
+  animation: dimBrighten 4s ease-in-out infinite alternate;
+}
+
+@keyframes dimBrighten {
+  0% { background: rgba(0,0,0,0.6); }
+  50% { background: rgba(0,0,0,0.4); }
+  100% { background: rgba(0,0,0,0.8); }
+}
+
+@keyframes servicesBreathing {
+  0%   { background-color: #3b1c5a; }
+  20%  { background-color: #4e2c6d; }
+  40%  { background-color: #6b5091; }
+  60%  { background-color: #9b7cb6; }
+  100% { background-color: #3b1c5a; }
+}
+
+.card > * {
+  position: relative; /* bring text above overlay */
+  z-index: 1;
+}
+
+.card.astro { background-image: url('/images/astro.png'); }
+.card.tarot { background-image: url('/images/tarot.png'); }
+.card.numerology { background-image: url('/images/numerology.png'); }
+.card.guidance { background-image: url('/images/guidance.png'); }
+.card.remedies { background-image: url('/images/remedies.png'); }
+.card { background-size: cover; background-position: center; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border: none;
+  color: white;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  justify-content: space-around;
+  padding: 0 10%;
+  border: 2px solid black;
+  gap: 20px;
+}
+
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+@media (max-width: 960px) {
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 900px) {
+  .split { grid-template-columns: 1fr; }
+}
+
+/* Completely hide scrollbar in all browsers, keep scrolling functional */
+html, body {
+  overflow: auto; /* scrolling still works */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
