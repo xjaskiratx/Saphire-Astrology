@@ -140,12 +140,17 @@
   backdrop-filter: blur(6px);
   border-radius: 16px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .card-tarot-wide {
   grid-column: 1 / -1;
   justify-self: center;
   width: clamp(260px, 48%, 560px);
+  margin-bottom: 20px;
 }
 
 .card-astro {
@@ -301,6 +306,10 @@
   font-weight: 700;
   font-size: 20px;
   margin-bottom: 20px;
+}
+
+.card-tarot .btn-svc-tarot {
+  align-self: center;
 }
 
 .btn-svc-astro {

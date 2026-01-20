@@ -40,8 +40,6 @@ export default function Services(){
   const [cur, setCur] = useState('INR')
   const p = priceTable[cur]
   const navigate = useNavigate()
-  const [tarotChoice, setTarotChoice] = useState('tarot15')
-
   const tarotOptions = [
     { key: 'tarot15', label: '15 min', service: 'Tarot Reading', timing: '15 min' },
     { key: 'tarot30', label: '30 min', service: 'Tarot Reading', timing: '30 min' },
@@ -78,12 +76,6 @@ export default function Services(){
               <div
                 key={x.key}
                 className={`card-tarot ${x.wide ? 'card-tarot-wide' : ''}`}
-                onClick={() => setTarotChoice(x.key)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') setTarotChoice(x.key)
-                }}
               >
                 <div className="h3">
                   {x.label.split("").map((char, i) => (
@@ -93,26 +85,21 @@ export default function Services(){
                   ))}
                 </div>
                 <div className="p">{p[x.key]} {cur}</div>
+                <button
+                  className="btn btn-svc-tarot"
+                  style={{marginTop:16}}
+                  onClick={() => goToContact({
+                    service: x.service,
+                    timing: x.timing,
+                    price: p[x.key],
+                    intent: 'book',
+                  })}
+                >
+                  Book {x.label}
+                </button>
               </div>
             ))}
           </div>
-          {(() => {
-            const selected = tarotOptions.find(x => x.key === tarotChoice) || tarotOptions[0]
-            return (
-              <button
-                className="btn btn-svc-tarot"
-                style={{marginTop:16}}
-                onClick={() => goToContact({
-                  service: selected.service,
-                  timing: selected.timing,
-                  price: p[selected.key],
-                  intent: 'book',
-                })}
-              >
-                Book {selected.label}
-              </button>
-            )
-          })()}
         </div>
       </section>
 
