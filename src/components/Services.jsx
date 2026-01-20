@@ -5,9 +5,9 @@ import '../styles/Services.css'
 const currencyList = ['INR','CAD','USD','AUD']
 const ratesToInr = { INR: 1, CAD: 65, USD: 90, AUD: 61 }
 const baseInrPrices = {
-  tarot15: 4000,
-  tarot30: 6000,
-  tarot45: 10000,
+  tarot15: 2900,
+  tarot30: 4400,
+  tarot45: 7200,
   tarotCombo40: 11000,
   kundali: 7100,
   varshaphala: 7100,
