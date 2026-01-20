@@ -12,35 +12,35 @@ const infoContent = {
   daily: [
     {
       title:'How to read daily scopes',
-      content:'Treat the forecast as a weather report for your mood and priorities, not a fixed destiny. Read for both sun and rising signs, notice the theme, and then decide how you want to respond.'
+      content:'Read it as guidance for the day, not a fixed prediction. Check both your sun and rising signs, then focus on one theme you can act on.'
     },
     {
       title:'Pairing with journal prompts',
-      content:'After reading, note one supportive action and one mindful caution for the day. This keeps the horoscope grounded and reminds you that small choices shape the outcome.'
+      content:'Write one thing to lean into and one thing to handle gently. A quick note anchors the forecast and makes it usable.'
     }
   ],
   tarot: [
     {
       title:'Major vs. Minor Arcana',
-      content:'Major cards point to big-life lessons or archetypal turning points; the Minors show daily dynamics around emotions, thinking, actions, and resources. Court cards often describe people, roles, or parts of yourself that want a voice.'
+      content:'Major Arcana highlights bigger life lessons and turning points. Minor Arcana covers everyday emotions, thoughts, actions, and practical matters; Court cards often show people or roles.'
     },
     {
       title:'Choosing a spread',
-      content:'Start with three-card past/present/future or mind/body/spirit spreads to keep insights focused. Move to Celtic Cross or Horseshoe layouts when you’re ready for multi-layered storytelling.'
+      content:'Start with a simple three-card spread to stay focused. Use larger layouts like Celtic Cross when you need depth and context.'
     },
     {
       title:'Question crafting tips',
-      content:'Ask “What can I understand/learn/do about…?” Instead of yes/no prompts. Open-ended questions invite richer guidance and make it easier to act on the reading.'
+      content:'Ask open-ended questions that invite advice, not yes/no answers. Framing it as "What can I learn or do about...?" makes the reading actionable.'
     }
   ],
   timing: [
     {
       title:'Transits that matter',
-      content:'Fast planets (Moon, Mercury, Venus, Mars) nudge day-to-day energy, while Jupiter through Pluto describe long arcs. Track both so you know whether you’re dealing with a passing mood or a deeper shift.'
+      content:'Fast planets describe daily mood shifts; slow planets show long-term change. Noting both helps you tell short blips from major cycles.'
     },
     {
       title:'Working with exact dates',
-      content:'Mark the date a transit perfects, then watch the week before and after for echoes. If it touches an angle or personal planet in your chart, journal what actually happens—you’ll build your own timing playbook.'
+      content:'Track the exact date and notice the week before and after for repeat themes. If the transit hits a personal planet or angle, journal what shows up to refine your timing sense.'
     }
   ]
 }

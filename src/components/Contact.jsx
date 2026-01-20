@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import '../styles/Contact.css'
 
 const channels = [
@@ -19,27 +20,66 @@ const channels = [
   {
     id: 'whatsapp',
     label: 'WhatsApp',
-    handle: '+1 (236) 313-3875',
+    handle: '+91 93119 23536',
     detail: 'Voice notes, quick clarifications or scheduling a call.',
-    href: 'https://wa.me/+12363133875'
+    href: 'https://wa.me/+919311923536'
   }
 ]
 
 export default function Contact(){
+  const location = useLocation()
   const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
   const [query, setQuery] = useState('')
+  const [email, setEmail] = useState('')
   const [dest, setDest] = useState('email')
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search)
+    const service = params.get('service')
+    const currency = params.get('currency')
+    const timing = params.get('timing')
+    const price = params.get('price')
+    const intent = params.get('intent')
+    if (!service && !currency && !intent && !timing && !price) return
+
+    const lines = []
+    if (intent === 'book') {
+      lines.push('Request: Book a reading')
+    } else if (intent === 'learn') {
+      lines.push('Request: Learn more')
+    } else if (intent) {
+      lines.push(`Request: ${intent}`)
+    }
+    if (service) lines.push(`Service: ${service}`)
+    if (timing) lines.push(`Timing: ${timing}`)
+    if (currency) lines.push(`Currency: ${currency}`)
+    if (price && currency) {
+      lines.push(`Price: ${price} ${currency}`)
+    } else if (price) {
+      lines.push(`Price: ${price}`)
+    }
+
+    const prefill = lines.join('\n')
+    if (prefill) {
+      setQuery(prev => (prev ? prev : prefill))
+    }
+  }, [location.search])
 
   const submit = (e) => {
     e.preventDefault()
+    const headerLines = []
+    if (name) headerLines.push(`Name: ${name}`)
+    if (email && dest === 'email') headerLines.push(`Email: ${email}`)
+    const header = headerLines.join('\n')
+    const bodyText = query ? `${header}${header ? '\n\n' : ''}${query}` : header
+
     if (dest === 'email'){
       const subject = encodeURIComponent('Client Query')
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${query}`)
+      const body = encodeURIComponent(bodyText)
       window.location.href = `mailto:youremail@example.com?subject=${subject}&body=${body}`
     } else {
-      const msg = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${query}`)
-      window.open(`https://wa.me/+12363133875?text=${msg}`, '_blank')
+      const msg = encodeURIComponent(bodyText)
+      window.open(`https://wa.me/+919311923536?text=${msg}`, '_blank')
     }
   }
 
@@ -73,6 +113,7 @@ export default function Contact(){
             </div>
           </div>
           <input className="input" placeholder="Your name" value={name} onChange={e=>setName(e.target.value)} required />
+          <input className="input" placeholder="Your email (optional)" value={email} onChange={e=>setEmail(e.target.value)} type="email" />
           <textarea className="textarea" placeholder="Drop your question, birth details, or call preference." value={query} onChange={e=>setQuery(e.target.value)} required />
           <button className="btn" type="submit">{dest==='email' ? 'Send via Email' : 'Send to WhatsApp'}</button>
         </form>

@@ -2,11 +2,11 @@ import React from 'react'
 import '../styles/Home.css'
 
 const items = [
-  { name: 'Aisha', quote: 'Beautifully accurate reading, felt truly seen.'},
-  { name: 'Leo', quote: 'The timing tips were spot on for my move.'},
-  { name: 'Maya', quote: 'Kind, clear, and practical guidance.'},
-  { name: 'Rohan', quote: 'Numerology + transit insights = mind blown.'},
-  { name: 'Sara', quote: 'Booked a follow-up. Highly recommend!'}
+  { name: 'Sonia', quote: 'You are really good at what you do'},
+  { name: 'Rimpy', quote: 'Totally satisfied and very impressed with the predictions and guidance'},
+  { name: 'Pooja', quote: 'Kind, clear, and practical guidance.'},
+  { name: 'Rohan', quote: 'I had a great experience. I really trust her predictions.'},
+  { name: 'Dhruv', quote: 'The session made hair on my arms bristle!'}
 ]
 
 export default function TestimonialsCarousel(){

@@ -2,15 +2,16 @@ import React, { useState } from 'react'
 import '../styles/FAQ.css'
 
 const seed = [
-  { q:'Do I need my exact birth time?', a:'It helps accuracy, but we can still work with approximations and discuss ranges.' },
-  { q:'Which traditions do you use?', a:'A blend of Western astrology with numerology and tarot for context.' },
-  { q:'How do sessions happen?', a:'On call, through messaging, or via detailed email reports—your choice.' },
-  { q:'Do I need my exact birth time?', a:'It helps accuracy, but we can still work with approximations and discuss ranges.' },
-  { q:'Which traditions do you use?', a:'A blend of Western astrology with numerology and tarot for context.' },
-  { q:'How do sessions happen?', a:'On call, through messaging, or via detailed email reports—your choice.' },
-  { q:'Do I need my exact birth time?', a:'It helps accuracy, but we can still work with approximations and discuss ranges.' },
-  { q:'Which traditions do you use?', a:'A blend of Western astrology with numerology and tarot for context.' },
-  { q:'How do sessions happen?', a:'On call, through messaging, or via detailed email reports—your choice.' },
+  { q:'Do I need my exact birth time?', a:'Exact time gives the most accurate chart, especially for houses and ascendant. If you are unsure, we can still work with approximate time and focus on planetary themes.' },
+  { q:'What details should I share before a reading?', a:'Birth date, place, and time are ideal, plus your key questions. The clearer your focus, the more targeted the insights.' },
+  { q:'Can astrology predict the future?', a:'Astrology highlights trends, timing, and likely themes rather than fixed outcomes. It is best used for guidance and decision-making, not guarantees.' },
+  { q:'What is the difference between sun, moon, and rising signs?', a:'Your sun sign reflects core identity, your moon sign shows emotions, and your rising sign is how you present to the world. Together they shape your overall chart.' },
+  { q:'How often should I get a reading?', a:'Most people benefit from a check-in every few months or around major life shifts. You can also book shorter sessions for specific questions.' },
+  { q:'Do you use Western or Vedic astrology?', a:'I primarily use Western astrology, and can blend in Vedic insights when relevant. The approach depends on your question and goals.' },
+  { q:'Can a reading help with relationships or compatibility?', a:'Yes, synastry compares two charts to reveal strengths and friction points. It helps you understand dynamics and communicate better.' },
+  { q:'What is a transit and why does it matter?', a:'A transit is a current planetary movement affecting your natal chart. It shows timing for opportunities, challenges, and growth periods.' },
+  { q:'Is astrology the same as tarot or numerology?', a:'They are different tools: astrology maps your birth chart, tarot offers intuitive guidance, and numerology focuses on number patterns. They can be combined for a fuller picture.' },
+  { q:'Are readings confidential?', a:'Yes, your information and session details are kept private. I only use your data to deliver the reading.' },
 ]
 
 export default function FAQs(){
