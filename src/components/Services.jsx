@@ -95,7 +95,7 @@ export default function Services(){
                     intent: 'book',
                   })}
                 >
-                  Book {x.label}
+                  Book a session
                 </button>
               </div>
             ))}
