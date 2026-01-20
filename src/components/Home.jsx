@@ -37,8 +37,8 @@ export default function Home(){
       {/* Hero */}
       <section className="hero">
         
-          <img src="../public/images/sabg.jpg" alt="Background" className="hero-bg-img" />
-          <img src="../public/images/sabg-modified.png" alt="Overlay" className="hero-overlay-img" />
+          <img src="/images/sabg.jpg" alt="Background" className="hero-bg-img" />
+          <img src="/images/sabg-modified.png" alt="Overlay" className="hero-overlay-img" />
           <div className="hero-overlay"></div>
         <div className="hero-name">Saphire Astro</div>
         <div className="hero-child">- Jetlys</div>
@@ -97,7 +97,7 @@ export default function Home(){
 
             {/* Group 2: The Image */}
               <div className="image-container">
-                <img className='God' src="../public/images/God.jpg" alt="Astrology tools" />
+                <img className='God' src="/images/God.jpg" alt="Astrology tools" />
               </div>
 
             {/* Group 3: The Sanskrit Quote */}
