@@ -110,7 +110,10 @@ export default function Services(){
       {/* Analysis Section */}
       <section className="section-services">
         <div className="container-astro">
-          <h2 className="h1 astro-head">Kundali Analysis (25-35 mins)</h2>
+          <h2 className="h1 astro-head">
+            <span className="astro-title">Kundali Analysis</span>
+            <span className="astro-sub">(25-35 mins)</span>
+          </h2>
           <div className="grid-svc-astro grid-4-svc-astro" style={{marginTop:16}}>
             {[
               {t:'Kundali Analysis', d:'Deep-dive into your birth chart for personality, strengths, and life themes.', k:'kundali'},
@@ -124,7 +127,7 @@ export default function Services(){
                 <div className="p">{p[x.k]} {cur}</div>
                 <button
                   className="btn-svc-astro"
-                  onClick={() => goToContact({ service: x.t, intent: 'learn', price: p[x.k] })}
+                  onClick={() => goToContact({ service: x.t, intent: 'book', price: p[x.k] })}
                 >
                   Book a Session
                 </button>
@@ -143,7 +146,10 @@ export default function Services(){
         <div className="container-num">
           <div className="num-banner" style={{marginBottom:16}}>
             <div className="h1 astro-head">Numerology Insights</div>
-            <p className="h3">Explore the power of numbers in your life.</p>
+            <p className="h3">
+              <span className="num-title">Explore the power of numbers</span>
+              <span className="num-sub">in your life.</span>
+            </p>
           </div>
           <div className="grid-svc-num grid-3-svc-tarot">
             {[
@@ -157,7 +163,7 @@ export default function Services(){
                 <div className="p">{p[x.k]} {cur}</div>
                 <button
                   className="btn-svc-num"
-                  onClick={() => goToContact({ service: x.t, intent: 'learn', price: p[x.k] })}
+                  onClick={() => goToContact({ service: x.t, intent: 'book', price: p[x.k] })}
                 >
                   Book a Session
                 </button>
@@ -183,7 +189,12 @@ export default function Services(){
               <div key={i} className="card-astro">
                 <div className="h3">{x.t}</div>
                 <p className="p">{x.d}</p>
-                <button className="btn-svc-astro" onClick={() => goToContact(x.t, 'learn')}>Learn More</button>
+                <button
+                  className="btn-svc-astro"
+                  onClick={() => goToContact({ service: x.t, intent: 'learn', price: p[x.k] })}
+                >
+                  Learn More
+                </button>
               </div>
             ))}
           </div>

@@ -418,6 +418,20 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .astro-head {
+    text-align: center;
+  }
+
+  .astro-title,
+  .astro-sub {
+    display: block;
+  }
+
+  .num-title,
+  .num-sub {
+    display: block;
+    text-align: center;
+  }
   /* --- Global Container Adjustments --- */
   .container-tarot, 
   .container-astro {
