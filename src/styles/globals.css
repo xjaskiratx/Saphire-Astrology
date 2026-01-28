@@ -14,6 +14,8 @@ font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
 
 html, body, #root {
   height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -66,10 +68,23 @@ button { cursor: pointer; }
 
 @keyframes servicesBreathing {
   0%   { background-color: #3b1c5a; }
-  20%  { background-color: #4e2c6d; }
-  40%  { background-color: #6b5091; }
-  60%  { background-color: #9b7cb6; }
+  25%  { background-color: #452560; }
+  50%  { background-color: #563070; }
+  75%  { background-color: #452560; }
   100% { background-color: #3b1c5a; }
+}
+
+@keyframes bgBreath {
+  0% { background-size: 102% 102%; }
+  100% { background-size: 112% 112%; }
+}
+
+@keyframes bgOrbit {
+  0%   { background-position: 46% 44%; }
+  25%  { background-position: 56% 41%; }
+  50%  { background-position: 59% 53%; }
+  75%  { background-position: 45% 59%; }
+  100% { background-position: 46% 44%; }
 }
 
 .card > * {
@@ -124,9 +139,17 @@ button { cursor: pointer; }
   .split { grid-template-columns: 1fr; }
 }
 
+.app-wrapper {
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100%;
+}
+
 /* Completely hide scrollbar in all browsers, keep scrolling functional */
 html, body {
-  overflow: auto; /* scrolling still works */
+  overflow-y: auto; /* scrolling still works */
+  overflow-x: hidden;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;     /* Firefox */
 }

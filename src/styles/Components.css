@@ -77,8 +77,9 @@
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%; /* Hidden off-screen */
-    width: 100%;
+    right: 0;
+    width: 100vw;
+    max-width: none;
     height: 100vh;
     /* Uses your existing gradient for consistency */
     background: linear-gradient(135deg, #2a0a3d, #3f0d56); 
@@ -87,10 +88,12 @@
     align-items: center;
     gap: 32px;
     padding-top: 60px;
+    transform: translateX(100%);
+    overflow-y: auto;
   }
 
   .nav-links.open {
-    right: 0; /* Slide in */
+    transform: translateX(0);
   }
 
   .nav-links a {

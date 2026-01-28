@@ -1,6 +1,13 @@
 .blog-page {
-  animation: servicesBreathing 20s ease-in-out infinite alternate;
+  animation: servicesBreathing 20s ease-in-out infinite alternate,
+             bgBreath 12s ease-in-out infinite alternate,
+             bgOrbit 16s ease-in-out infinite alternate;
   background-color: #3b1c5a;
+  background-image: url('/images/image.png');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  will-change: background-size, background-position;
   padding: 54px 0;
 }
 

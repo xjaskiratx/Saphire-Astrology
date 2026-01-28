@@ -3,6 +3,9 @@
 .faq-head { display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; background: var(--panel); }
 .faq-body { padding: 14px 16px; background: #141322; }
 .submit-box { margin-top: 24px; }
+.submit-box {
+  backdrop-filter: blur(3px);
+}
 
 @media only screen and (max-width: 600px) {
   /* 1. Ensure the page is at least tall enough to push the footer */
@@ -43,4 +46,16 @@
     padding: 12px;
     font-size: 16px; /* Prevents iOS auto-zoom on focus */
   }
+}
+.faq-page {
+  animation: servicesBreathing 20s ease-in-out infinite alternate,
+             bgBreath 12s ease-in-out infinite alternate,
+             bgOrbit 16s ease-in-out infinite alternate;
+  background-color: #3b1c5a;
+  background-image: url('/images/image.png');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  will-change: background-size, background-position;
+  padding: 54px 0;
 }

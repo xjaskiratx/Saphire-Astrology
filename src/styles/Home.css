@@ -161,6 +161,10 @@
   animation: marquee 30s linear infinite;
 }
 
+.testimonials-section {
+  overflow: hidden;
+}
+
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -191,16 +195,41 @@
 /* base */
 .fade-seq {
   opacity: 0;
-  /* transform: scale(0.95); */
   display: inline-block;
-  animation: fadeGrow 1s ease-out forwards;
+  animation-name: fadeGrow, bubblePulse;
+  animation-duration: 1s, 6.5s;
+  animation-timing-function: ease-out, ease-in-out;
+  animation-fill-mode: forwards, both;
+  animation-iteration-count: 1, infinite;
+  animation-delay: var(--fade-delay, 0s), var(--bubble-delay, 0s);
 }
 
-/* all words animate together */
-.fade-seq.word { animation-delay: 1.6s; }
+.bubble-only {
+  display: inline-block;
+  animation-name: bubblePulse;
+  animation-duration: 6.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: var(--bubble-delay, 0s);
+}
 
-/* all dots animate together after */
-.fade-seq.dot { animation-delay: 2.8s; }
+.trust-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.trust-item {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trust-dot {
+  line-height: 1;
+}
 
 .God {
   width: 50%;
@@ -220,6 +249,12 @@
     opacity: 1;
     transform: scale(1);
   }
+}
+
+@keyframes bubblePulse {
+  0%, 77% { transform: scale(1); }
+  85%     { transform: scale(1.15); }
+  100%    { transform: scale(1); }
 }
 
 .section-numbers {
@@ -268,6 +303,18 @@
   color: white;
   margin: 12px 0;
   color: var(--muted);
+}
+
+@media only screen and (max-width: 900px) {
+  .trust-line {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .trust-item {
+    width: 100%;
+  }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -364,6 +411,7 @@
   .hero-bg-img {
     object-position: 70% center; /* Adjusts the focal point of your background image */
   }
+
 }
 
 /* Maintain desktop layout for screens > 600px */
@@ -373,5 +421,12 @@
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 24px;
+  }
+
+  .quote-details {
+    grid-column: 1 / -1;
+    justify-self: center;
+    text-align: center;
+    width: fit-content;
   }
 }

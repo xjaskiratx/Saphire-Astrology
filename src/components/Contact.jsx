@@ -89,7 +89,7 @@ export default function Contact(){
         <div className="contact-intro card">
           <div className="badge">Let’s connect</div>
           <h2 className="h2" style={{textAlign:'center'}}>Choose how you’d like to reach out</h2>
-          <p className="p" style={{textAlign:'center'}}>Whether you prefer a quick DM, a thoughtful email or a WhatsApp voice note, I reply within 24 hours on weekdays.</p>
+          <p className="p" style={{textAlign:'center'}}>Whether you prefer a quick DM, a thoughtful email or a WhatsApp voice note, we reply within 24 hours on weekdays.</p>
           <div className="channel-grid">
             {channels.map(ch => (
               <a key={ch.id} className={`channel-card ${ch.id}`} href={ch.href} target="_blank" rel="noreferrer">

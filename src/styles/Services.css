@@ -1,8 +1,28 @@
 .services-page {
-  animation: servicesBreathing 20s ease-in-out infinite alternate;
+  animation: servicesBreathing 20s ease-in-out infinite alternate,
+             bgBreath 12s ease-in-out infinite alternate,
+             bgOrbit 16s ease-in-out infinite alternate;
   background-color: #3b1c5a; /* starting color */
+  background-image: url('/images/image.png');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  will-change: background-size, background-position;
   padding-top: 28px;
   /* border-radius: 24px; */
+}
+
+@keyframes bgBreath {
+  0% { background-size: 102% 102%; }
+  100% { background-size: 112% 112%; }
+}
+
+@keyframes bgOrbit {
+  0%   { background-position: 46% 44%; }
+  25%  { background-position: 56% 41%; }
+  50%  { background-position: 59% 53%; }
+  75%  { background-position: 45% 59%; }
+  100% { background-position: 46% 44%; }
 }
 
 .section-services {

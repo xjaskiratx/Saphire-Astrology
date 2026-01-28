@@ -3,6 +3,21 @@ import '../styles/Home.css'
 import CardsRow from './CardsRow.jsx'
 import TestimonialsCarousel from './TestimonialsCarousel.jsx'
 
+const renderBubbleText = (text, { keyPrefix, className, baseFadeDelay = 0, baseBubbleDelay = 0, step = 0.06 }) => (
+  text.split('').map((char, i) => (
+    <span
+      key={`${keyPrefix}-${i}`}
+      className={className}
+      style={{
+        '--fade-delay': `${baseFadeDelay}s`,
+        '--bubble-delay': `${baseBubbleDelay + i * step}s`,
+      }}
+    >
+      {char === ' ' ? '\u00A0' : char}
+    </span>
+  ))
+)
+
 export default function Home(){
   useEffect(() => {
     const el = document.querySelector('.countup');
@@ -48,13 +63,60 @@ export default function Home(){
       <section className='welcomeandcards'> 
         <section className="section">
           <div className="container">
-            <h2 className="h2 fade-in-up">Welcome to Saphire Astro</h2>
-            <h2 className="h2">
-              <span className="word fade-seq">Credibility</span>
-              <span className="dot fade-seq "> &nbsp; • &nbsp;  </span>
-              <span className="word fade-seq ">Reliability</span>
-              <span className="dot fade-seq "> &nbsp; • &nbsp;  </span>
-              <span className="word fade-seq ">Trust</span>
+            <h2 className="h2 fade-in-up">
+              {renderBubbleText('Welcome to Saphire Astro', {
+                keyPrefix: 'welcome',
+                className: 'bubble-only',
+                baseBubbleDelay: 2.4,
+                step: 0.05,
+              })}
+            </h2>
+            <h2 className="h2 trust-line">
+              <span className="trust-item">
+                {renderBubbleText('Credibility', {
+                  keyPrefix: 'cred',
+                  className: 'fade-seq',
+                  baseFadeDelay: 1.6,
+                  baseBubbleDelay: 3.0,
+                  step: 0.06,
+                })}
+              </span>
+              <span className="trust-item trust-dot">
+                {renderBubbleText('•', {
+                  keyPrefix: 'dot-1',
+                  className: 'fade-seq',
+                  baseFadeDelay: 2.8,
+                  baseBubbleDelay: 4.2,
+                  step: 0.06,
+                })}
+              </span>
+              <span className="trust-item">
+                {renderBubbleText('Reliability', {
+                  keyPrefix: 'rely',
+                  className: 'fade-seq',
+                  baseFadeDelay: 1.6,
+                  baseBubbleDelay: 3.0,
+                  step: 0.06,
+                })}
+              </span>
+              <span className="trust-item trust-dot">
+                {renderBubbleText('•', {
+                  keyPrefix: 'dot-2',
+                  className: 'fade-seq',
+                  baseFadeDelay: 2.8,
+                  baseBubbleDelay: 4.2,
+                  step: 0.06,
+                })}
+              </span>
+              <span className="trust-item">
+                {renderBubbleText('Trust', {
+                  keyPrefix: 'trust',
+                  className: 'fade-seq',
+                  baseFadeDelay: 1.6,
+                  baseBubbleDelay: 3.0,
+                  step: 0.06,
+                })}
+              </span>
             </h2>
           </div>
         </section>

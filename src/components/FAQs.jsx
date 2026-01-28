@@ -7,7 +7,6 @@ const seed = [
   { q:'Can astrology predict the future?', a:'Astrology highlights trends, timing, and likely themes rather than fixed outcomes. It is best used for guidance and decision-making, not guarantees.' },
   { q:'What is the difference between sun, moon, and rising signs?', a:'Your sun sign reflects core identity, your moon sign shows emotions, and your rising sign is how you present to the world. Together they shape your overall chart.' },
   { q:'How often should I get a reading?', a:'Most people benefit from a check-in every few months or around major life shifts. You can also book shorter sessions for specific questions.' },
-  { q:'Do you use Western or Vedic astrology?', a:'I primarily use Western astrology, and can blend in Vedic insights when relevant. The approach depends on your question and goals.' },
   { q:'Can a reading help with relationships or compatibility?', a:'Yes, synastry compares two charts to reveal strengths and friction points. It helps you understand dynamics and communicate better.' },
   { q:'What is a transit and why does it matter?', a:'A transit is a current planetary movement affecting your natal chart. It shows timing for opportunities, challenges, and growth periods.' },
   { q:'Is astrology the same as tarot or numerology?', a:'They are different tools: astrology maps your birth chart, tarot offers intuitive guidance, and numerology focuses on number patterns. They can be combined for a fuller picture.' },
@@ -29,7 +28,7 @@ export default function FAQs(){
   }
 
   return (
-    <section className="section">
+    <section className="section faq-page">
       <div className="container">
         <h2 className="h2">FAQs</h2>
         <div className="faq-list">
