@@ -22,7 +22,7 @@ const channels = [
     label: 'WhatsApp',
     handle: '+91 93119 23536',
     detail: 'Voice notes, quick clarifications or scheduling a call.',
-    href: 'https://wa.me/+919311923536'
+    href: 'https://wa.me/919311923536'
   }
 ]
 
@@ -79,44 +79,60 @@ export default function Contact(){
       window.location.href = `mailto:youremail@example.com?subject=${subject}&body=${body}`
     } else {
       const msg = encodeURIComponent(bodyText)
-      window.open(`https://wa.me/+919311923536?text=${msg}`, '_blank')
+      window.open(`https://wa.me/919311923536?text=${msg}`, '_blank')
     }
   }
 
   return (
     <section className="section contact-page">
-      <div className="container contact-shell">
-        <div className="contact-intro card">
-          <div className="badge">Let’s connect</div>
-          <h2 className="h2" style={{textAlign:'center'}}>Choose how you’d like to reach out</h2>
-          <p className="p" style={{textAlign:'center'}}>Whether you prefer a quick DM, a thoughtful email or a WhatsApp voice note, we reply within 24 hours on weekdays.</p>
-          <div className="channel-grid">
-            {channels.map(ch => (
-              <a key={ch.id} className={`channel-card ${ch.id}`} href={ch.href} target="_blank" rel="noreferrer">
-                <div className="channel-label">{ch.label}</div>
-                <div className="channel-handle">{ch.handle}</div>
-                <p className="channel-detail">{ch.detail}</p>
-                <span className="channel-cta">Open {ch.label}</span>
-              </a>
-            ))}
-          </div>
+      <div className="page-bg" aria-hidden="true">
+        <div className="page-bg-orbit">
+          <img
+            className="page-bg-image"
+            src="/images/image.webp"
+            alt=""
+            width={3266}
+            height={4897}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+          />
         </div>
-        
-        <form className="card contact-form" onSubmit={submit}>
-          <div className="form-head">
-            <div className="badge">Short form</div>
-            <div className="h2" style={{textAlign:'center'}}>Send a voice or text note</div>
-            <p className="p form-p" style={{textAlign:'center'}}>Quickly fill out your name and query and send it right away directly!</p>
-            <div className="mode-toggle" role="group" aria-label="Delivery preference">
-              <button type="button" className={dest==='email' ? 'mode-btn active' : 'mode-btn'} onClick={()=>setDest('email')}>Email</button>
-              <button type="button" className={dest==='whatsapp' ? 'mode-btn active' : 'mode-btn'} onClick={()=>setDest('whatsapp')}>WhatsApp</button>
+      </div>
+      <div className="page-content">
+        <div className="container contact-shell">
+          <div className="contact-intro card">
+            <div className="badge">Let’s connect</div>
+            <h2 className="h2" style={{textAlign:'center'}}>Choose how you’d like to reach out</h2>
+            <p className="p" style={{textAlign:'center'}}>Whether you prefer a quick DM, a thoughtful email or a WhatsApp voice note, we reply within 24 hours on weekdays.</p>
+            <div className="channel-grid">
+              {channels.map(ch => (
+                <a key={ch.id} className={`channel-card ${ch.id}`} href={ch.href} target="_blank" rel="noreferrer">
+                  <div className="channel-label">{ch.label}</div>
+                  <div className="channel-handle">{ch.handle}</div>
+                  <p className="channel-detail">{ch.detail}</p>
+                  <span className="channel-cta">Open {ch.label}</span>
+                </a>
+              ))}
             </div>
           </div>
-          <input className="input" placeholder="Your name" value={name} onChange={e=>setName(e.target.value)} required />
-          <input className="input" placeholder="Your email (optional)" value={email} onChange={e=>setEmail(e.target.value)} type="email" />
-          <textarea className="textarea" placeholder="Drop your question, birth details, or call preference." value={query} onChange={e=>setQuery(e.target.value)} required />
-          <button className="btn" type="submit">{dest==='email' ? 'Send via Email' : 'Send to WhatsApp'}</button>
-        </form>
+          
+          <form className="card contact-form" onSubmit={submit}>
+            <div className="form-head">
+              <div className="badge">Short form</div>
+              <div className="h2" style={{textAlign:'center'}}>Send a voice or text note</div>
+              <p className="p form-p" style={{textAlign:'center'}}>Quickly fill out your name and query and send it right away directly!</p>
+              <div className="mode-toggle" role="group" aria-label="Delivery preference">
+                <button type="button" className={dest==='email' ? 'mode-btn active' : 'mode-btn'} onClick={()=>setDest('email')}>Email</button>
+                <button type="button" className={dest==='whatsapp' ? 'mode-btn active' : 'mode-btn'} onClick={()=>setDest('whatsapp')}>WhatsApp</button>
+              </div>
+            </div>
+            <input className="input" placeholder="Your name" value={name} onChange={e=>setName(e.target.value)} required />
+            <input className="input" placeholder="Your email (optional)" value={email} onChange={e=>setEmail(e.target.value)} type="email" />
+            <textarea className="textarea" placeholder="Drop your question, birth details, or call preference." value={query} onChange={e=>setQuery(e.target.value)} required />
+            <button className="btn" type="submit">{dest==='email' ? 'Send via Email' : 'Send to WhatsApp'}</button>
+          </form>
+        </div>
       </div>
     </section>
   )

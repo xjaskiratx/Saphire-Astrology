@@ -1,14 +1,10 @@
 /* --- Global & Page Setup --- */
 .about-page {
-  animation: servicesBreathing 20s ease-in-out infinite alternate,
-             bgBreath 12s ease-in-out infinite alternate,
-             bgOrbit 16s ease-in-out infinite alternate;
+  animation: servicesBreathing 20s ease-in-out infinite alternate;
   background-color: #3b1c5a;
-  background-image: url('/images/image.png');
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  will-change: background-size, background-position;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   min-height: 100vh;
   color: white;
 }
@@ -101,6 +97,7 @@
   flex: 0 0 420px; /* Fixes the width of the image container */
   display: flex;
   justify-content: center;
+  height: 455px;
 }
 
 .about-img img {
@@ -113,6 +110,7 @@
   border-radius: 24px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.35);
   animation: glowPulse 4s ease-in-out infinite;
+  height: 100%;
 }
 
 @keyframes glowPulse {
@@ -198,11 +196,13 @@
   .about-img {
     flex: 0 0 auto;
     width: 100%;
+    height: auto;
   }
 
   .about-img img {
     max-width: 300px; /* Keeps portraits from becoming giant on mobile */
     aspect-ratio: 1 / 1.1;
+    height: auto;
   }
 
   .about-bio {

@@ -55,16 +55,31 @@ export default function Blog(){
 
   return (
     <div className="section blog-page">
-      <div className="container">
-        {/* Card Grid */}
-        <div className="card-grid">
-          {topics.map(t => (
-            <div key={t.id} className={`card ${t.cls}`} onClick={()=>scrollTo(t.id)} role="button">
-              <div className="h3">{t.title}</div>
-              <div className="p">{t.preview}</div>
-            </div>
-          ))}
+      <div className="page-bg" aria-hidden="true">
+        <div className="page-bg-orbit">
+          <img
+            className="page-bg-image"
+            src="/images/image.webp"
+            alt=""
+            width={3266}
+            height={4897}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+          />
         </div>
+      </div>
+      <div className="page-content">
+        <div className="container">
+          {/* Card Grid */}
+          <div className="card-grid">
+            {topics.map(t => (
+              <div key={t.id} className={`card ${t.cls}`} onClick={()=>scrollTo(t.id)} role="button">
+                <div className="h3">{t.title}</div>
+                <div className="p">{t.preview}</div>
+              </div>
+            ))}
+          </div>
 
         {/* Info Sections */}
         <div style={{marginTop:24}}>
@@ -76,8 +91,9 @@ export default function Blog(){
           ))}
         </div>
 
-        {/* Back to Top button */}
-        {/* <button className="top-button" onClick={()=>window.scrollTo({top:0, behavior:'smooth'})}>↑ Top</button> */}
+          {/* Back to Top button */}
+          {/* <button className="top-button" onClick={()=>window.scrollTo({top:0, behavior:'smooth'})}>↑ Top</button> */}
+        </div>
       </div>
     </div>
   )

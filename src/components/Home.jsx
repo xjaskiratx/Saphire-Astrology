@@ -52,8 +52,26 @@ export default function Home(){
       {/* Hero */}
       <section className="hero">
         
-          <img src="/images/sabg.jpg" alt="Background" className="hero-bg-img" />
-          <img src="/images/sabg-modified.png" alt="Overlay" className="hero-overlay-img" />
+          <img
+            src="/images/sabg.webp"
+            alt="Background"
+            className="hero-bg-img"
+            width={1308}
+            height={736}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <img
+            src="/images/sabg-modified.webp"
+            alt="Overlay"
+            className="hero-overlay-img"
+            width={622}
+            height={622}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
           <div className="hero-overlay"></div>
         <div className="hero-name">Saphire Astro</div>
         <div className="hero-child">- Jetlys</div>
@@ -135,7 +153,7 @@ export default function Home(){
         <div className="container">
           <div className="split-section">
             <div className="image-container">
-              <img className='God'src="../public/images/God.jpg" alt="Astrology tools" />
+                <img className='God'src="../public/images/God.webp" alt="Astrology tools" />
             </div>
             <div>
               <h3 className='h3'> Saphire is not about predicting the future,</h3>    
@@ -159,7 +177,15 @@ export default function Home(){
 
             {/* Group 2: The Image */}
               <div className="image-container">
-                <img className='God' src="/images/God.jpg" alt="Astrology tools" />
+                <img
+                  className='God'
+                  src="/images/God.webp"
+                  alt="Astrology tools"
+                  width={736}
+                  height={1308}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
 
             {/* Group 3: The Sanskrit Quote */}

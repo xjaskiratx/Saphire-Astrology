@@ -75,16 +75,43 @@ button { cursor: pointer; }
 }
 
 @keyframes bgBreath {
-  0% { background-size: 102% 102%; }
-  100% { background-size: 112% 112%; }
+  0% { transform: scale(1.02); }
+  100% { transform: scale(1.12); }
 }
 
 @keyframes bgOrbit {
-  0%   { background-position: 46% 44%; }
-  25%  { background-position: 56% 41%; }
-  50%  { background-position: 59% 53%; }
-  75%  { background-position: 45% 59%; }
-  100% { background-position: 46% 44%; }
+  0%   { transform: translate(-2%, -2%); }
+  25%  { transform: translate(3%, -3%); }
+  50%  { transform: translate(4%, 2%); }
+  75%  { transform: translate(-3%, 4%); }
+  100% { transform: translate(-2%, -2%); }
+}
+
+.page-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.page-bg-orbit {
+  position: absolute;
+  inset: -6%;
+  animation: bgOrbit 16s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.page-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: bgBreath 12s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.page-content {
+  position: relative;
+  z-index: 1;
 }
 
 .card > * {
@@ -92,11 +119,11 @@ button { cursor: pointer; }
   z-index: 1;
 }
 
-.card.astro { background-image: url('/images/astro.png'); }
-.card.tarot { background-image: url('/images/tarot.png'); }
-.card.numerology { background-image: url('/images/numerology.png'); }
-.card.guidance { background-image: url('/images/guidance.png'); }
-.card.remedies { background-image: url('/images/remedies.png'); }
+.card.astro { background-image: url('/images/astro.webp'); }
+.card.tarot { background-image: url('/images/tarot.webp'); }
+.card.numerology { background-image: url('/images/numerology.webp'); }
+.card.guidance { background-image: url('/images/guidance.webp'); }
+.card.remedies { background-image: url('/images/remedies.webp'); }
 .card { background-size: cover; background-position: center; }
 
 .btn {

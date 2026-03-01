@@ -29,43 +29,59 @@ export default function FAQs(){
 
   return (
     <section className="section faq-page">
-      <div className="container">
-        <h2 className="h2">FAQs</h2>
-        <div className="faq-list">
-          {seed.map((item, i) => (
-            <div key={i} className="faq-item">
-              <div className="faq-head" role="button" onClick={()=> setOpen(open===i ? null : i)}>
-                <div className="h3">{item.q}</div>
-                <div className="h3" aria-hidden>{open===i ? '–' : '+'}</div>
-              </div>
-              {open===i && (
-                <div className="faq-body">
-                  <div className="p">{item.a}</div>
-                </div>
-              )}
-            </div>
-          ))}
+      <div className="page-bg" aria-hidden="true">
+        <div className="page-bg-orbit">
+          <img
+            className="page-bg-image"
+            src="/images/image.webp"
+            alt=""
+            width={3266}
+            height={4897}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+          />
         </div>
+      </div>
+      <div className="page-content">
+        <div className="container">
+          <h2 className="h2">FAQs</h2>
+          <div className="faq-list">
+            {seed.map((item, i) => (
+              <div key={i} className="faq-item">
+                <div className="faq-head" role="button" onClick={()=> setOpen(open===i ? null : i)}>
+                  <div className="h3">{item.q}</div>
+                  <div className="h3" aria-hidden>{open===i ? '–' : '+'}</div>
+                </div>
+                {open===i && (
+                  <div className="faq-body">
+                    <div className="p">{item.a}</div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
 
-        <div className="card submit-box">
-          <div className="h3" style={{marginBottom:18}}>Didn’t find your question?</div>
-          <form onSubmit={submit} style={{display:'grid', gap:12}}>
-            <input 
-              className="input" 
-              placeholder="Your name" 
-              value={name} 
-              onChange={e=>setName(e.target.value)} 
-              required 
-            />
-            <textarea 
-              className="textarea" 
-              placeholder="Your question" 
-              value={question} 
-              onChange={e=>setQuestion(e.target.value)} 
-              required 
-            />
-            <button className="btn" type="submit">Submit Question</button>
-          </form>
+          <div className="card submit-box">
+            <div className="h3" style={{marginBottom:18}}>Didn’t find your question?</div>
+            <form onSubmit={submit} style={{display:'grid', gap:12}}>
+              <input 
+                className="input" 
+                placeholder="Your name" 
+                value={name} 
+                onChange={e=>setName(e.target.value)} 
+                required 
+              />
+              <textarea 
+                className="textarea" 
+                placeholder="Your question" 
+                value={question} 
+                onChange={e=>setQuestion(e.target.value)} 
+                required 
+              />
+              <button className="btn" type="submit">Submit Question</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>

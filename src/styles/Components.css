@@ -126,6 +126,10 @@
     color: var(--muted);
   }
 
+  .footer-credit {
+    font-size: 16px;
+  }
+
   /* Target the hyphen specifically to hide it */
   .footer-hyphen {
     display: none !important;
@@ -152,6 +156,20 @@
   gap: 12px;
   align-items: center;
   grid-template-columns: 1fr auto;
+}
+
+.copyright-text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.footer-credit {
+  width: 100%;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  opacity: 0.85;
 }
 
 .footer-social {

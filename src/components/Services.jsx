@@ -59,12 +59,27 @@ export default function Services(){
 
   return (
     <div className='services-page'>
-      <div className="currency-select global-currency">
-        <div className="cur-text">Currency:</div>
-        <select value={cur} onChange={e=>setCur(e.target.value)}>
-          {currencyList.map(c => <option key={c} value={c}>{c}</option>)}
-        </select>
+      <div className="page-bg" aria-hidden="true">
+        <div className="page-bg-orbit">
+          <img
+            className="page-bg-image"
+            src="/images/image.webp"
+            alt=""
+            width={3266}
+            height={4897}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+          />
+        </div>
       </div>
+      <div className="page-content">
+        <div className="currency-select global-currency">
+          <div className="cur-text">Currency:</div>
+          <select value={cur} onChange={e=>setCur(e.target.value)}>
+            {currencyList.map(c => <option key={c} value={c}>{c}</option>)}
+          </select>
+        </div>
 
       {/* Tarot Section */}
       <section className="section-services first-svc">
@@ -216,6 +231,7 @@ export default function Services(){
           ))}
         </div>
       </section> */}
+      </div>
     </div>
   )
 }
