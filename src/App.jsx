@@ -9,6 +9,7 @@ import Transits from './components/Transits.jsx'
 import Contact from './components/Contact.jsx'
 import AboutUs from './components/AboutUs.jsx'
 import FAQs from './components/FAQs.jsx'
+import NotFound from './components/NotFound.jsx'
 import './styles/Components.css'
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/faqs" element={<FAQs />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
