@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found | Saphire Astro</title>
+    <style>
+        :root {
+            --bg: #0c0b12;
+            --panel: #161522;
+            --text: #f2f2f7;
+            --muted: #b8b8c7;
+            --accent: #7a5cff;
+            --accent-2: #ff86c8;
+            --card: #1d1b2a;
+            --border: #2a2940;
+        }
+
+        body {
+            margin: 0;
+            background: #0a0a2a;
+            color: var(--text);
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: clamp(40px, 8vw, 80px);
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+
+        p {
+            font-size: 18px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin: 20px 0 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(122, 92, 255, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(122, 92, 255, 0.4);
+        }
+
+        /* Ambient Background Elements */
+        .orb {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(122, 92, 255, 0.2) 0%, transparent 70%);
+            filter: blur(50px);
+            z-index: 0;
+            animation: float 10s infinite alternate ease-in-out;
+        }
+
+        .orb-1 { top: -100px; left: -100px; }
+        .orb-2 { bottom: -100px; right: -100px; animation-delay: -5s; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 50px) scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    
+    <div class="container">
+        <h1>404</h1>
+        <p>The cosmic paths seem to have shifted. <br>The page you are looking for does not exist.</p>
+        <a href="/" class="btn">Return to Home</a>
+    </div>
+</body>
+</html>

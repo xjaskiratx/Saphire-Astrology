@@ -12,8 +12,8 @@ export default function Footer(){
           <span className="footer-credit">Developed and Managed by JSX W&amp;D</span>
         </div>
       <div className="footer-social">
-        <a className="social-link" href="/privacy-policy.html">Privacy Policy</a>
-        <a className="social-link" href="/terms-of-service.html">Terms of Service</a>
+        <a className="social-link" href="/privacy-policy">Privacy Policy</a>
+        <a className="social-link" href="/terms-of-service">Terms of Service</a>
         <a className="social-link" href="https://www.instagram.com/saphire.astro?igsh=MTJhNDJueGNraGpjNQ==" target="_blank" rel="noreferrer">Instagram</a>
         <a className="social-link" href="https://wa.me/919311923536" target="_blank" rel="noreferrer">WhatsApp</a>
       </div>
