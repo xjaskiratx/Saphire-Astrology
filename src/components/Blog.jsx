@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import '../styles/Blog.css'
 import { Accordion } from './Accordion.jsx'
+import Seo from './Seo.jsx'
 
 const topics = [
   { id:'daily', title:'Daily Horoscopes', preview:'Brief guidance for each sign.', cls:'astro' },
@@ -55,6 +56,11 @@ export default function Blog(){
 
   return (
     <div className="section blog-page">
+      <Seo
+        title="Astrology Blog"
+        description="Guides and insights on horoscopes, tarot, and astrological timing."
+        path="/blog"
+      />
       <div className="page-bg" aria-hidden="true">
         <div className="page-bg-orbit">
           <img

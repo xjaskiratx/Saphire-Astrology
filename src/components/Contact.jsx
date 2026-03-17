@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import '../styles/Contact.css'
+import Seo from './Seo.jsx'
 
 const channels = [
   {
@@ -76,7 +77,7 @@ export default function Contact(){
     if (dest === 'email'){
       const subject = encodeURIComponent('Client Query')
       const body = encodeURIComponent(bodyText)
-      window.location.href = `mailto:youremail@example.com?subject=${subject}&body=${body}`
+      window.location.href = `mailto:astrologysapphire@gmail.com?subject=${subject}&body=${body}`
     } else {
       const msg = encodeURIComponent(bodyText)
       window.open(`https://wa.me/919311923536?text=${msg}`, '_blank')
@@ -85,6 +86,11 @@ export default function Contact(){
 
   return (
     <section className="section contact-page">
+      <Seo
+        title="Contact"
+        description="Get in touch for readings, bookings, and questions. Reach out via Instagram, email, or WhatsApp."
+        path="/contact"
+      />
       <div className="page-bg" aria-hidden="true">
         <div className="page-bg-orbit">
           <img

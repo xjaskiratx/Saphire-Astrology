@@ -1,9 +1,15 @@
 import React from 'react';
 import '../styles/Components.css';
+import Seo from './Seo.jsx';
 
 const TermsOfService = () => {
   return (
     <div className="container" style={{ padding: '80px 20px', maxWidth: '800px', textAlign: 'left' }}>
+      <Seo
+        title="Terms of Service"
+        description="Review the terms and conditions for using Saphire Astro."
+        path="/terms-of-service"
+      />
       <h1 className="h1" style={{ borderBottom: '2px solid var(--border)', paddingBottom: '10px', marginBottom: '30px' }}>Terms of Service</h1>
       <p className="p" style={{ textAlign: 'left', marginBottom: '20px' }}>Last updated: March 13, 2026</p>
       <p className="p" style={{ textAlign: 'left', marginBottom: '30px' }}>

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import '../styles/Home.css'
 import CardsRow from './CardsRow.jsx'
 import TestimonialsCarousel from './TestimonialsCarousel.jsx'
+import Seo from './Seo.jsx'
 
 const renderBubbleText = (text, { keyPrefix, className, baseFadeDelay = 0, baseBubbleDelay = 0, step = 0.06 }) => (
   text.split('').map((char, i) => (
@@ -49,6 +50,18 @@ export default function Home(){
 
   return (
     <div>
+      <Seo
+        title="Premium Astrology Services"
+        description="Personalized astrology readings, compatibility analysis, and planetary insights to guide your life's journey."
+        path="/"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Saphire Astro',
+          url: 'https://saphireastro.in/',
+          logo: 'https://saphireastro.in/images/logo_final.png',
+        }}
+      />
       {/* Hero */}
       <section className="hero">
         
@@ -60,7 +73,7 @@ export default function Home(){
             height={736}
             loading="eager"
             decoding="async"
-            fetchpriority="high"
+            fetchPriority="high"
           />
           <img
             src="/images/sabg-modified.webp"
@@ -70,7 +83,7 @@ export default function Home(){
             height={622}
             loading="eager"
             decoding="async"
-            fetchpriority="high"
+            fetchPriority="high"
           />
           <div className="hero-overlay"></div>
         <div className="hero-name">Saphire Astro</div>

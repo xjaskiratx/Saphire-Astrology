@@ -1,9 +1,15 @@
 import React from 'react';
 import '../styles/Components.css';
+import Seo from './Seo.jsx';
 
 const PrivacyPolicy = () => {
   return (
     <div className="container" style={{ padding: '80px 20px', maxWidth: '800px', textAlign: 'left' }}>
+      <Seo
+        title="Privacy Policy"
+        description="Read how Saphire Astro collects, uses, and protects your information."
+        path="/privacy-policy"
+      />
       <h1 className="h1" style={{ borderBottom: '2px solid var(--border)', paddingBottom: '10px', marginBottom: '30px' }}>Privacy Policy</h1>
       <p className="p" style={{ textAlign: 'left', marginBottom: '20px' }}>Last updated: March 13, 2026</p>
       <p className="p" style={{ textAlign: 'left', marginBottom: '30px' }}>

@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/About.css'
+import Seo from './Seo.jsx'
 
 // const familyMembers = [
 //   {
@@ -55,6 +56,11 @@ const familyMembers = [
 export default function AboutUs(){
   return (
     <div className="about-page">
+      <Seo
+        title="About Us"
+        description="Meet the astrologers behind Saphire Astro and our approach to clear, grounded guidance."
+        path="/about-us"
+      />
       <div className="page-bg" aria-hidden="true">
         <div className="page-bg-orbit">
           <img

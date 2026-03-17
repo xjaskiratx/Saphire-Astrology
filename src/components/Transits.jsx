@@ -1,9 +1,15 @@
 import React from 'react'
 import '../styles/Transits.css'
+import Seo from './Seo.jsx'
 
 export default function Transits(){
   return (
     <div className="space">
+      <Seo
+        title="Planetary Transits"
+        description="Explore planetary transits and timing insights. Updates coming soon."
+        path="/transits"
+      />
       <div className="sun"></div>
 
       {/* Orbits for 8 planets */}

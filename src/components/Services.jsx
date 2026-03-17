@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../styles/Services.css'
+import Seo from './Seo.jsx'
 
 const currencyList = ['INR','CAD','USD','AUD']
 const ratesToInr = { INR: 1, CAD: 65, USD: 90, AUD: 61 }
@@ -59,6 +60,11 @@ export default function Services(){
 
   return (
     <div className='services-page'>
+      <Seo
+        title="Astrology Services"
+        description="Explore personalized readings, compatibility guidance, and insightful reports tailored to your journey."
+        path="/services"
+      />
       <div className="page-bg" aria-hidden="true">
         <div className="page-bg-orbit">
           <img

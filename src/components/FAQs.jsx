@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../styles/FAQ.css'
+import Seo from './Seo.jsx'
 
 const seed = [
   { q:'Do I need my exact birth time?', a:'Exact time gives the most accurate chart, especially for houses and ascendant. If you are unsure, we can still work with approximate time and focus on planetary themes.' },
@@ -29,6 +30,11 @@ export default function FAQs(){
 
   return (
     <section className="section faq-page">
+      <Seo
+        title="FAQs"
+        description="Answers to common questions about readings, birth details, transits, and confidentiality."
+        path="/faqs"
+      />
       <div className="page-bg" aria-hidden="true">
         <div className="page-bg-orbit">
           <img
