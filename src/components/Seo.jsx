@@ -1,5 +1,7 @@
 import React from 'react'
-import { Helmet } from 'react-helmet-async'
+import helmetPkg from 'react-helmet-async'
+
+const { Helmet } = helmetPkg
 
 const SITE = {
   name: 'Saphire Astro',

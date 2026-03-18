@@ -1,8 +1,10 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom/server'
-import { HelmetProvider } from 'react-helmet-async'
+import helmetPkg from 'react-helmet-async'
 import App from './App.jsx'
+
+const { HelmetProvider } = helmetPkg
 
 export function render(url) {
   const helmetContext = {}
