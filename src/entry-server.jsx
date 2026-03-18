@@ -1,10 +1,11 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom/server'
-import helmetPkg from 'react-helmet-async'
+import { createRequire } from 'node:module'
 import App from './App.jsx'
 
-const { HelmetProvider } = helmetPkg
+const require = createRequire(import.meta.url)
+const { HelmetProvider } = require('react-helmet-async')
 
 export function render(url) {
   const helmetContext = {}

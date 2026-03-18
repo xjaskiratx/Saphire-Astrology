@@ -20,7 +20,10 @@ const routes = [
   '/terms-of-service',
 ]
 
-const template = await fs.readFile(path.join(distDir, 'index.html'), 'utf-8')
+const rawTemplate = await fs.readFile(path.join(distDir, 'index.html'), 'utf-8')
+const template = rawTemplate
+  .replace(/<title>.*?<\/title>/s, '')
+  .replace(/<meta[^>]*name=["']description["'][^>]*>/i, '')
 
 const vite = await createServer({
   root,
