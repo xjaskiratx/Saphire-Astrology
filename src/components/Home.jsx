@@ -73,7 +73,7 @@ export default function Home(){
             height={736}
             loading="eager"
             decoding="async"
-            fetchPriority="high"
+            fetchpriority="high"
           />
           <img
             src="/images/sabg-modified.webp"
@@ -83,7 +83,7 @@ export default function Home(){
             height={622}
             loading="eager"
             decoding="async"
-            fetchPriority="high"
+            fetchpriority="high"
           />
           <div className="hero-overlay"></div>
         <h1 className="hero-name">Saphire Astro</h1>

@@ -75,7 +75,7 @@ export default function Services(){
             height={4897}
             loading="eager"
             decoding="async"
-            fetchPriority="high"
+            fetchpriority="high"
           />
         </div>
       </div>

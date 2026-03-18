@@ -71,7 +71,7 @@ export default function AboutUs(){
             height={4897}
             loading="eager"
             decoding="async"
-            fetchPriority="high"
+            fetchpriority="high"
           />
         </div>
       </div>
@@ -85,7 +85,7 @@ export default function AboutUs(){
           height={1024}
           loading="eager"
           decoding="async"
-          fetchPriority="high"
+          fetchpriority="high"
         />
       </section>
 

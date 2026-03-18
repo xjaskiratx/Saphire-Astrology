@@ -101,7 +101,7 @@ export default function Contact(){
             height={4897}
             loading="eager"
             decoding="async"
-            fetchPriority="high"
+            fetchpriority="high"
           />
         </div>
       </div>

@@ -45,7 +45,7 @@ export default function FAQs(){
             height={4897}
             loading="eager"
             decoding="async"
-            fetchPriority="high"
+            fetchpriority="high"
           />
         </div>
       </div>
