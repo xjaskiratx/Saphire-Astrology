@@ -86,7 +86,7 @@ export default function Home(){
             fetchPriority="high"
           />
           <div className="hero-overlay"></div>
-        <div className="hero-name">Saphire Astro</div>
+        <h1 className="hero-name">Saphire Astro</h1>
         <div className="hero-child">- Jetlys</div>
       </section>
 
