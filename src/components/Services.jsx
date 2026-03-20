@@ -71,18 +71,17 @@ export default function Services(){
             className="page-bg-image"
             src="/images/image.webp"
             alt=""
-            width={3266}
-            height={4897}
-            loading="eager"
+            width={1200}
+            height={1800}
+            loading="lazy"
             decoding="async"
-            fetchpriority="high"
           />
         </div>
       </div>
       <div className="page-content">
         <div className="currency-select global-currency">
-          <div className="cur-text">Currency:</div>
-          <select value={cur} onChange={e=>setCur(e.target.value)}>
+          <label htmlFor="currency-select" className="cur-text">Currency:</label>
+          <select id="currency-select" value={cur} onChange={e=>setCur(e.target.value)}>
             {currencyList.map(c => <option key={c} value={c}>{c}</option>)}
           </select>
         </div>

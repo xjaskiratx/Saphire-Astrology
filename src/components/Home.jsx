@@ -59,7 +59,7 @@ export default function Home(){
           '@type': 'Organization',
           name: 'Saphire Astro',
           url: 'https://saphireastro.in/',
-          logo: 'https://saphireastro.in/images/logo_final.png',
+          logo: 'https://saphireastro.in/images/logo_final.webp',
         }}
       />
       {/* Hero */}

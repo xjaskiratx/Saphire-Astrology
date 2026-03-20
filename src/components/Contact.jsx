@@ -97,11 +97,10 @@ export default function Contact(){
             className="page-bg-image"
             src="/images/image.webp"
             alt=""
-            width={3266}
-            height={4897}
-            loading="eager"
+            width={1200}
+            height={1800}
+            loading="lazy"
             decoding="async"
-            fetchpriority="high"
           />
         </div>
       </div>

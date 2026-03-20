@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async'
 const SITE = {
   name: 'Saphire Astro',
   url: 'https://saphireastro.in',
-  defaultImage: '/images/logo_final.png',
+  defaultImage: '/images/logo_final.webp',
 }
 
 const toAbsoluteUrl = (path) => {
