@@ -221,21 +221,6 @@ export default function Services(){
         </div>
       </section>
 
-      {/* Consultation Options Banner */}
-      {/* <section className="section-services banner">
-        <div className="container banner-options">
-          {[
-            {t:'On Call', e:'📞'},
-            {t:'On Message', e:'💬'},
-            {t:'Email Report', e:'📧'},
-          ].map((x,i)=> (
-            <div key={i} className="banner-pill">
-              <span style={{fontSize:24, marginRight:8}}>{x.e}</span>
-              <span className="h3">{x.t}</span>
-            </div>
-          ))}
-        </div>
-      </section> */}
       </div>
     </div>
   )

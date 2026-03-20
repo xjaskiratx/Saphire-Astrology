@@ -161,23 +161,6 @@ export default function Home(){
         <span className=''></span>
       </div>
 
-      {/* Split image + info */}
-      {/* <section className="section godandquote">
-        <div className="container">
-          <div className="split-section">
-            <div className="image-container">
-                <img className='God'src="../public/images/God.webp" alt="Astrology tools" />
-            </div>
-            <div>
-              <h3 className='h3'> Saphire is not about predicting the future,</h3>    
-              <h3 className='h3'> It’s about helping you create it. </h3>
-              <h4 className="h4 sanskrit-quote"> यथा पिण्डे तथा ब्रह्माण्डे</h4>
-              <div className="quote-top">“Yathā Piņde Tathā Brahmāņde”</div>
-              <div className="quote-bottom">“As is the microcosm, so is the macrocosm.”</div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       <section className="section godandquote">
         <div className="container">
