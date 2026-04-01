@@ -61,9 +61,24 @@ export default function Services(){
   return (
     <div className='services-page'>
       <Seo
-        title="Astrology Services"
-        description="Explore personalized readings, compatibility guidance, and insightful reports tailored to your journey."
+        title="Astrology Services — Kundali Analysis, Tarot, Numerology"
+        description="Book expert Vedic astrology consultations, tarot readings, kundali matchmaking & numerology name correction. Prices from ₹2,900. Online & in-person sessions available."
         path="/services"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Kundali Analysis — Vedic Birth Chart Reading',
+          provider: { '@type': 'LocalBusiness', name: 'Saphire Astro' },
+          description: '25–35 minute deep-dive Vedic birth chart analysis covering personality, life themes, career, relationships, and timing of key events.',
+          offers: {
+            '@type': 'Offer',
+            price: '7100',
+            priceCurrency: 'INR',
+            availability: 'https://schema.org/InStock',
+          },
+          serviceType: 'Vedic Astrology Consultation',
+          areaServed: 'Worldwide',
+        }}
       />
       <div className="page-bg" aria-hidden="true">
         <div className="page-bg-orbit">

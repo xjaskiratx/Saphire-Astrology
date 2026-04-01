@@ -57,8 +57,8 @@ export default function Blog(){
   return (
     <div className="section blog-page">
       <Seo
-        title="Astrology Blog"
-        description="Guides and insights on horoscopes, tarot, and astrological timing."
+        title="Astrology & Numerology Blog — Expert Vedic Insights"
+        description="Explore planetary transits, tarot guides, numerology insights, and Vedic astrology explainers written by the Jetly family — 20+ years of real practice behind every post."
         path="/blog"
       />
       <div className="page-bg" aria-hidden="true">

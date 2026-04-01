@@ -10,7 +10,7 @@ export default function Footer(){
           <span>© {new Date().getFullYear()} Saphire Astrology</span>
           <span className="footer-hyphen"> — </span>
           <span className="all-rights">All rights reserved.</span>
-          <span className="footer-credit">Developed and Managed by JSX W&amp;D</span>
+          <span className="footer-credit">Developed and Managed by <a href="https://jsx-studios.vercel.app" target="_blank" rel="noreferrer">JSX Studios</a></span>
         </div>
       <div className="footer-social">
         <Link className="social-link" to="/privacy-policy">Privacy Policy</Link>

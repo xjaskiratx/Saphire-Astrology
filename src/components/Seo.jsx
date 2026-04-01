@@ -44,7 +44,11 @@ export default function Seo({
       <meta name="twitter:url" content={canonical} />
 
       {noIndex ? <meta name="robots" content="noindex, nofollow" /> : null}
-      {jsonLd ? <script type="application/ld+json">{JSON.stringify(jsonLd)}</script> : null}
+      {jsonLd
+        ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]).map((schema, i) => (
+            <script key={i} type="application/ld+json">{JSON.stringify(schema)}</script>
+          ))
+        : null}
     </Helmet>
   )
 }

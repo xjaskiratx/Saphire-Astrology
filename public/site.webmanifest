@@ -3,12 +3,12 @@
     "short_name": "SaphireAstro",
     "icons": [
         {
-            "src": "/images/logo_final.webp",
+            "src": "/logo-192.webp",
             "sizes": "192x192",
             "type": "image/webp"
         },
         {
-            "src": "/images/logo_final.webp",
+            "src": "/logo-512.webp",
             "sizes": "512x512",
             "type": "image/webp"
         }

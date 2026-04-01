@@ -46,7 +46,7 @@ const familyMembers = [
     name: 'Aradhana Jetly',
     role: 'Vedic Astrologer & Modern Practitioner',
     summary:
-      'With over 7 years of experience, Aradhana Jetly represents the next generation of Sapphire Astrology. She blends traditional Vedic principles with a modern, logical outlook, helping clients understand astrology as a tool for awareness and free will. Her focus is on making astrology practical, approachable, and relevant to today’s challenges.',
+      'With over 7 years of experience, Aradhana Jetly represents the next generation of Saphire Astrology. She blends traditional Vedic principles with a modern, logical outlook, helping clients understand astrology as a tool for awareness and free will. Her focus is on making astrology practical, approachable, and relevant to today’s challenges.',
     image: '/images/daughter1.webp',
     width: 945,
     height: 2048
@@ -57,9 +57,41 @@ export default function AboutUs(){
   return (
     <div className="about-page">
       <Seo
-        title="About Us"
-        description="Meet the astrologers behind Saphire Astro and our approach to clear, grounded guidance."
+        title="Meet the Jetly Family — Vedic Astrologers with 20+ Years of Experience"
+        description="Saphire Astro is led by Anil, Shaifali & Aradhana Jetly — a family of Vedic astrologers with 20+ years of ancestral practice. Honest, logic-based readings for 2000+ clients/year."
         path="/about-us"
+        jsonLd={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Anil Jetly',
+            jobTitle: 'Senior Vedic Astrologer',
+            worksFor: { '@type': 'Organization', name: 'Saphire Astro' },
+            knowsAbout: ['Vedic Astrology', 'Kundali Analysis', 'Kundali Matchmaking'],
+            description: '20+ years of ancestral Vedic astrology practice covering money, health, relationships, and career with clear logic behind every prediction.',
+            url: 'https://www.saphireastro.in/about-us',
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Shaifali Jetly',
+            jobTitle: 'Vedic Astrologer & Spiritual Guide',
+            worksFor: { '@type': 'Organization', name: 'Saphire Astro' },
+            knowsAbout: ['Vedic Astrology', 'Spiritual Guidance', 'Relationship Astrology'],
+            description: '20+ years of experience helping clients navigate relationships, health, and inner balance with reassurance and practical guidance.',
+            url: 'https://www.saphireastro.in/about-us',
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Aradhana Jetly',
+            jobTitle: 'Vedic Astrologer & Modern Practitioner',
+            worksFor: { '@type': 'Organization', name: 'Saphire Astro' },
+            knowsAbout: ['Vedic Astrology', 'Tarot Reading', 'Numerology'],
+            description: '7+ years experience in Vedic astrology, blending traditional principles with a modern, logical approach.',
+            url: 'https://www.saphireastro.in/about-us',
+          },
+        ]}
       />
       <div className="page-bg" aria-hidden="true">
         <div className="page-bg-orbit">
@@ -104,7 +136,7 @@ export default function AboutUs(){
         <div className="narrow">
           <h2 className="h2">Three voices, one purpose</h2>
           <p className="p">
-      Sapphire Astrology is an ancestral family practice rooted in Vedic astrology, with over 20 years of experience across generations. 
+      Saphire Astrology is an ancestral family practice rooted in Vedic astrology, with over 20 years of experience across generations. 
       For us, astrology is not about fear or rigid beliefs—it is guidance. Life situations, whether joyful or challenging, are shaped by both luck and free will. 
       While astrology helps us understand what luck indicates, it is always your intention, karma, and choices that shape the outcome.
       <br /><br />
