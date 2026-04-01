@@ -87,8 +87,8 @@ export default function Contact(){
   return (
     <section className="section contact-page">
       <Seo
-        title="Contact"
-        description="Get in touch for readings, bookings, and questions. Reach out via Instagram, email, or WhatsApp."
+        title="Book an Astrology Consultation — WhatsApp, Email or Video Call"
+        description="Connect with Saphire Astro via WhatsApp, Instagram, or email. We reply within 24 hours on weekdays. Choose in-person, video call, audio call, or WhatsApp chat."
         path="/contact"
       />
       <div className="page-bg" aria-hidden="true">

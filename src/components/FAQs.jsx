@@ -31,9 +31,21 @@ export default function FAQs(){
   return (
     <section className="section faq-page">
       <Seo
-        title="FAQs"
-        description="Answers to common questions about readings, birth details, transits, and confidentiality."
+        title="Astrology FAQ — Common Questions Answered by Expert Vedic Astrologers"
+        description="Answers to your top astrology questions: birth time requirements, how readings work, what transits mean, and whether astrology can predict the future. Honest answers from 20+ year practitioners."
         path="/faqs"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: seed.map(item => ({
+            '@type': 'Question',
+            name: item.q,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: item.a,
+            },
+          })),
+        }}
       />
       <div className="page-bg" aria-hidden="true">
         <div className="page-bg-orbit">

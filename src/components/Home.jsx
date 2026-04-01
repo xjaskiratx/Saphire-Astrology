@@ -51,15 +51,25 @@ export default function Home(){
   return (
     <div>
       <Seo
-        title="Premium Astrology Services"
-        description="Personalized astrology readings, compatibility analysis, and planetary insights to guide your life's journey."
+        title="Vedic Astrology, Tarot & Numerology Consultations Online | 20+ Years"
+        description="Expert Vedic astrology, tarot readings & numerology name correction by the Jetly family. Book a session via WhatsApp, video call or in-person. 2000+ clients served."
         path="/"
         jsonLd={{
           '@context': 'https://schema.org',
-          '@type': 'Organization',
+          '@type': 'LocalBusiness',
           name: 'Saphire Astro',
-          url: 'https://saphireastro.in/',
-          logo: 'https://saphireastro.in/images/logo_final.webp',
+          description: 'Premium Vedic astrology, tarot reading, and numerology consultations by the Jetly family. 20+ years of experience.',
+          url: 'https://www.saphireastro.in',
+          telephone: '+919311923536',
+          email: 'astrologysapphire@gmail.com',
+          address: {
+            '@type': 'PostalAddress',
+            addressCountry: 'IN',
+          },
+          priceRange: '₹₹₹',
+          sameAs: ['https://www.instagram.com/saphire.astro'],
+          openingHours: 'Mo-Fr 09:00-19:00',
+          serviceType: 'Astrology, Numerology, Tarot Reading, Reiki',
         }}
       />
       {/* Hero */}
@@ -209,7 +219,7 @@ export default function Home(){
 )) }
           </h3>
           <h3 className="h3">
-            <span className="countup" data-target="20000">1</span>+ clients helped globally
+            <span className="countup" data-target="2000">2,000</span>+ clients helped globally
           </h3>
         </div>
       </section>
