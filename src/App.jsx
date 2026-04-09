@@ -1,5 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import './styles/Components.css'
@@ -34,6 +35,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <SpeedInsights />
     </div>
   )
 }
